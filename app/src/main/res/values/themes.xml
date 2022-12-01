@@ -18,5 +18,8 @@
         <item name="backgroundTint">@color/primary_color</item>
         <item name="cornerRadius">20dp</item>
     </style>
-
+    <style name="diagAnim">
+        <item name="android:windowEnterAnimation">@anim/zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/zoom_out</item>
+    </style>
 </resources>

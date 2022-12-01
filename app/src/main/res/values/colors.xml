@@ -11,6 +11,6 @@
     <!--  custom-->
     <color name="second_primary">#111111</color>
     <color name="third_primary">#686565</color>
-
+    <color name="trans">#00FD6483</color>
 
 </resources>
