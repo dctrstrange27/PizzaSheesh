@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.philipricedealership"
-        minSdk 21
+        minSdk 28
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -42,5 +42,7 @@ dependencies {
     implementation files('libs/mail.jar')
 
     //BCRYPT FOR PASSWORD ENCRYPTION
-    implementation group: 'at.favre.lib', name: 'bcrypt', version: '0.9.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'org.mindrot:jbcrypt:0.4'
 }
