@@ -34,7 +34,7 @@ public class login extends AppCompatActivity {
 
         login.setOnClickListener(JohnySinsei -> {
             try{
-                String _email = email.getText().toString(), _pass = pass.getText().toString();
+                String _email = email.getText().toString().replaceAll("\\s",""), _pass = pass.getText().toString();
                 User usr = new User(_email);
                 if(!usr.checkIfAlreadyExist(dbHelper)){
                     Toast.makeText(this, "User doesn't exist", Toast.LENGTH_LONG).show();
@@ -45,9 +45,11 @@ public class login extends AppCompatActivity {
                     Toast.makeText(this, "Wrong Credentail", Toast.LENGTH_LONG).show();
                     return;
                 }
-//                usr.setState(1);
-//                usr.saveState(getApplicationContext(), dbHelper, false);
-//
+                usr.setState(1);
+                usr.saveState(getApplicationContext(), dbHelper, false);
+                Toast.makeText(this, "Success. Welcome Back!", Toast.LENGTH_LONG).show();
+
+                // TODO YEPES ATTATCH MO HERE YUNG HOME ACTIVITY
 //                Intent homeIntent = new Intent(getApplicationContext(), Home.class);
 //                homeIntent.putExtra("currentUser", usr);
 
