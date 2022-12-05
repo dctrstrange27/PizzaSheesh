@@ -3,33 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.fragment_home"
     android:gravity="center"
-    >
+    tools:context=".home.fragment_home">
+
     <ScrollView
         android:id="@+id/scroll"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="40dp"
         android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-            <TextView
-                android:textAlignment="center"
-                android:drawableLeft="@drawable/arrow_left_svgrepo_com"
-                android:paddingVertical="5dp"
-                android:paddingHorizontal="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="My Cart"
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="20dp"
-                android:textColor="#000"
-                />
+            android:orientation="vertical">
             <ListView
                 android:id="@+id/movieList"
                 android:layout_width="match_parent"
@@ -38,9 +26,73 @@
                 android:dividerHeight="0dp"
                 android:paddingVertical="10dp"
                 android:scrollbars="none"
-                tools:listitem="@layout/cart_list"
-                />
-        </LinearLayout>
-    </ScrollView>
+                tools:listitem="@layout/cart_list" />
 
+            <LinearLayout
+                android:paddingHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="Items:"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#000"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".70" />
+
+                <TextView
+                    android:textAlignment="center"
+                    android:text="15"
+                    android:textColor="#000"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".30" />
+            </LinearLayout>
+            <LinearLayout
+                android:paddingHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="total:"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#000"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".70" />
+                <TextView
+                    android:textAlignment="center"
+                    android:text="$50.00"
+                    android:textColor="#000"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".30" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:text="checkout"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:paddingVertical="10dp"
+                    style="@style/checkout_button"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

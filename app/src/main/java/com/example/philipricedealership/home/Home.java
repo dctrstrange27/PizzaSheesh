@@ -15,44 +15,48 @@ public class Home extends AppCompatActivity {
     private ImageView home,products,orders,cart,Me;
     private User currentUser;
     private DatabaseHelper dbHelper;
-    private TextView myname;
+    private TextView myname,fragLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        myname = findViewById(R.id.myname);
+        fragLabel = findViewById(R.id.fragmentLabel);
         home = findViewById(R.id.homeIcon);
         products = findViewById(R.id.productsIcon);
         orders = findViewById(R.id.ordersIcon);
         cart = findViewById(R.id.cartIcons);
         Me = findViewById(R.id.meIcons);
-
         currentUser = (User) getIntent().getSerializableExtra("currentUser");
-        myname.setText(currentUser.getUsername());
-
+//        myname.setText(currentUser.getUsername());
         routes();
     }
     public void routes(){
         route(0, null);
+        fragLabel.setText("Home");
         home.setOnClickListener(johny -> {
             home.startAnimation(AnimationUtils.loadAnimation(Home.this, R.anim.anim_item));
+            fragLabel.setText("Home");
             route(0, null);
         });
         products.setOnClickListener(johny -> {
             products.startAnimation(AnimationUtils.loadAnimation(Home.this, R.anim.anim_item));
+            fragLabel.setText("Products");
             route(1, null);
         });
         orders.setOnClickListener(johny -> {
             orders.startAnimation(AnimationUtils.loadAnimation(Home.this, R.anim.anim_item));
+            fragLabel.setText("Orders");
             route(2, null);
         });
         cart.setOnClickListener(johny -> {
             cart.startAnimation(AnimationUtils.loadAnimation(Home.this, R.anim.anim_item));
+            fragLabel.setText("My Cart");
             route(3, null);
         });
         Me.setOnClickListener(johny -> {
             Me.startAnimation(AnimationUtils.loadAnimation(Home.this, R.anim.anim_item));
+            fragLabel.setText("Me");
             route(4, null);
         });
 
