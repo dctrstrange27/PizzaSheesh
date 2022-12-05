@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.example.philipricedealership._utils.DatabaseHelper;
 import com.example.philipricedealership.signup.login;
 import com.example.philipricedealership.signup.signup;
 
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
         login_btn = findViewById(R.id.login_btn);
         signup_btn = findViewById(R.id.signup_btn);
+
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        dbHelper.checkTableExist();
 
         login_btn.setOnClickListener(johny -> {
             Intent toLogin = new Intent(getApplicationContext(), login.class);

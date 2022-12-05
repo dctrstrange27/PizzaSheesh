@@ -9,7 +9,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="300dp"
@@ -24,7 +23,6 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/text"
             android:layout_width="300dp"
@@ -39,7 +37,6 @@
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
-
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="301dp"
@@ -52,14 +49,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.309" />
-
         <EditText
             android:id="@+id/username"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:background="@drawable/sign_box"
-            android:drawableLeft="@drawable/person"
+            android:drawableLeft="@drawable/person_signup"
             android:drawablePadding="10dp"
             android:hint="username"
             android:padding="10dp"
@@ -69,14 +65,13 @@
             app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:textInputLayoutFocusedRectEnabled="false" />
-
         <EditText
             android:id="@+id/email"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/sign_box"
-            android:drawableLeft="@drawable/person"
+            android:drawableLeft="@drawable/email"
             android:drawablePadding="10dp"
             android:hint="email"
             android:padding="10dp"
