@@ -60,6 +60,10 @@ public class Product implements Serializable {
         this.price = price;
     }
 
+    public int getProductImageResId(Context context){
+        return context.getResources().getIdentifier(String.format("drawable/%s", getImgUrl()), null, context.getPackageName());
+    }
+
     private ContentValues getSelfContentValues(){
         ContentValues vals = new ContentValues();
         vals.put("imgUrl", imgUrl);

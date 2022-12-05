@@ -12,8 +12,6 @@ import com.example.philipricedealership.R;
 
 public class fragment_cart extends Fragment {
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
