@@ -6,7 +6,6 @@
     tools:context=".home.fragment_home"
     android:gravity="center"
     >
-
     <ScrollView
         android:id="@+id/scroll"
         android:paddingHorizontal="20dp"
