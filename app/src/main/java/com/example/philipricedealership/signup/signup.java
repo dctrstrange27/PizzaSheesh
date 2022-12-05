@@ -69,7 +69,7 @@ public class signup extends AppCompatActivity {
                 Toast.makeText(this, "Confirm Password Doesn't Match", Toast.LENGTH_LONG).show();
                 return;
             }
-            newUsr = new User(_email, _username, Helper.hashPassword(_password));
+            newUsr = new User(_email, _username, Helper.hashPassword(_password), "", "");
 
             if (newUsr.checkIfAlreadyExist(dbHelper)) {
                 Toast.makeText(this, "Email is already taken", Toast.LENGTH_LONG).show();
@@ -133,11 +133,9 @@ public class signup extends AppCompatActivity {
     public void onSuccess() {
         newUsr.setState(1);
         if (newUsr.saveState(this, dbHelper, true)) {
-            // TODO YEPES ATTATCH MO HERE YUNG HOME ACTIVITY
             Intent homeIntent = new Intent(getApplicationContext(), Home.class);
             homeIntent.putExtra("currentUser", newUsr);
             startActivity(homeIntent);
-            // TODO YEPES EDIT loading.xml confirm_dialog.xml THEME/STYLE
         }
 
     }

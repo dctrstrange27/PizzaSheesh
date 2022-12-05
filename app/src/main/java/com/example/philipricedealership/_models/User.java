@@ -9,9 +9,40 @@ import com.example.philipricedealership._utils.*;
 import java.io.Serializable;
 
 public class User implements Serializable {
-
     private int uid, state;
-    private String image, email, username, password;
+    private String image, email, username, password, address, cart;
+
+    public User(int uid, int state, String image, String email, String username, String password, String address, String cart) {
+        this.uid = uid;
+        this.state = state;
+        this.image = image;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.address = address;
+        this.cart = cart;
+    }
+
+    public User(String image, String email, String username, String password, String address, String cart) {
+        this.image = image;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.address = address;
+        this.cart = cart;
+    }
+
+    public User(String email, String username, String password, String address, String cart) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.address = address;
+        this.cart = cart;
+    }
+
+    public User(String email) {
+        this.email = email;
+    }
 
     public int getUid() {
         return uid;
@@ -19,6 +50,22 @@ public class User implements Serializable {
 
     public void setUid(int uid) {
         this.uid = uid;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getEmail() {
@@ -41,55 +88,24 @@ public class User implements Serializable {
         return password;
     }
 
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public User(String email){ this.email = email; }
-
-    public User(String image, String email, String username, String password) {
-        this.uid = uid;
-        this.email = email;
-        this.username = username;
-        this.password = password;
+    public String getAddress() {
+        return address;
     }
 
-    /**
-     * Constructor that initializes 3 fields for user
-     *
-     * @param email email of user
-     * @param username username of user
-     * @param password hash of users password
-     * @return User returns instance of User
-     */
-    public User(String email, String username, String password) {
-        this.uid = uid;
-        this.email = email;
-        this.username = username;
-        this.password = password;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public User(int uid, String email, String username, String password) {
-        this.uid = uid;
-        this.email = email;
-        this.username = username;
-        this.password = password;
+    public String getCart() {
+        return cart;
+    }
+
+    public void setCart(String cart) {
+        this.cart = cart;
     }
 
     public boolean checkIfAlreadyExist(DatabaseHelper dbHelper){
@@ -100,19 +116,21 @@ public class User implements Serializable {
 
     private ContentValues getSelfContentValues(){
         ContentValues vals = new ContentValues();
+        vals.put("state", this.state);
         vals.put("image", this.image);
         vals.put("email", this.email);
         vals.put("username", this.username);
         vals.put("password", this.password);
-        vals.put("state", state);
+        vals.put("address", this.address);
+        vals.put("cart", this.cart);
         return vals;
     }
 
-        /* Saves current object state to user table
-        *
-         * @args DatabaseHelper an instance of DatabaseHelper
-         * @args isNew indicastes if this user is a new user, if user already exist this will return false
-         * */
+    /* Saves current object state to user table
+    *
+     * @args DatabaseHelper an instance of DatabaseHelper
+     * @args isNew indicastes if this user is a new user, if user already exist this will return false
+     * */
     public boolean saveState(Context context, DatabaseHelper dbHelper, boolean isNew){
         if(isNew){
             if(checkIfAlreadyExist(dbHelper)){
@@ -124,7 +142,7 @@ public class User implements Serializable {
                 System.out.println("USER : New User Saved Self");
                 return true;
             }else{
-                Toast.makeText(null, "Failed to create", Toast.LENGTH_LONG);
+                Toast.makeText(context, "Failed to create", Toast.LENGTH_LONG);
                 return false;
             }
         }else{
@@ -138,18 +156,19 @@ public class User implements Serializable {
             }
         }
     }
+
     public void fetchSelf(DatabaseHelper dbHelper){
         try{
             Cursor findUser = dbHelper.execRawQuery(String.format("SELECT * FROM user WHERE email='%s';", email), null);
-
             if (findUser == null || findUser.getCount() == 0 || !findUser.moveToNext()) return;
             this.setUid(findUser.getInt(0));
-            this.setImage(findUser.getString(1));
-            this.setEmail(findUser.getString(2));
-            this.setUsername(findUser.getString(3));
-            this.setPassword(findUser.getString(4));
-            this.setState(findUser.getInt(5));
-
+            this.setState(findUser.getInt(1));
+            this.setImage(findUser.getString(2));
+            this.setEmail(findUser.getString(3));
+            this.setUsername(findUser.getString(4));
+            this.setPassword(findUser.getString(5));
+            this.setAddress(findUser.getString(6));
+            this.setCart(findUser.getString(7));
             System.out.println("INITSED ");
         }catch(Exception e){
             System.out.println("ERR ON FETCH " + e);
@@ -165,6 +184,8 @@ public class User implements Serializable {
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", address='" + address + '\'' +
+                ", cart='" + cart + '\'' +
                 '}';
     }
 }
