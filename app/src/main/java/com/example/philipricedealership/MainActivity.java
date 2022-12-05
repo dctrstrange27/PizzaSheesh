@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         signup_btn = findViewById(R.id.signup_btn);
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
+//        dbHelper.dropDbs(new String[]{"user", "product", "orders"});
         dbHelper.checkTableExist();
 
         login_btn.setOnClickListener(johny -> {

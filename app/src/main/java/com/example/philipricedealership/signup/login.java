@@ -50,10 +50,8 @@ public class login extends AppCompatActivity {
                 usr.saveState(getApplicationContext(), dbHelper, false);
                 Toast.makeText(this, "Success. Welcome Back!", Toast.LENGTH_LONG).show();
 
-                // TODO YEPES ATTATCH MO HERE YUNG HOME ACTIVITY
                 Intent homeIntent = new Intent(getApplicationContext(), Home.class);
-//                homeIntent.putExtra("currentUser", usr);
-
+                homeIntent.putExtra("currentUser", usr);
                 startActivity(homeIntent);
             }catch (Exception e){ System.out.println("ERRR " + e); }
         });
