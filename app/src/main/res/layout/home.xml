@@ -23,7 +23,7 @@
         <LinearLayout
             android:paddingVertical="8dp"
             android:paddingHorizontal="10dp"
-            android:background="@drawable/nav_bg"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
