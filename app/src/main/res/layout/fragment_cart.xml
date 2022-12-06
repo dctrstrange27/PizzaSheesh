@@ -83,7 +83,7 @@
                     android:textAllCaps="false"
                     android:fontFamily="@font/poppins_medium"
                     android:textColor="#fff"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:paddingVertical="10dp"
                     style="@style/checkout_button"
                     android:layout_width="290dp"
