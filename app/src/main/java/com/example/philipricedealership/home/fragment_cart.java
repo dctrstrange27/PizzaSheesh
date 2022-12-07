@@ -1,8 +1,11 @@
 package com.example.philipricedealership.home;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -54,11 +57,11 @@ public class fragment_cart extends Fragment {
         totalqty = v.findViewById(R.id.totalqty);
         checkout.setOnClickListener( JohnySinsei ->{
             currentUser.placeOrder(getContext(), dbHelper);
-
+            rerender();
             Dialog checkout_dialog = new Dialog(getContext());
             checkout_dialog.setContentView(R.layout.dialog_order_placed);
             checkout_dialog.getWindow().getAttributes().windowAnimations = R.style.diagAnim;
-
+            checkout_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             ImageButton dialogClose = checkout_dialog.findViewById(R.id.closeV);
             dialogClose.setOnClickListener(JohnySinsei2 -> {
                 checkout_dialog.dismiss();
@@ -91,13 +94,25 @@ public class fragment_cart extends Fragment {
         }
 
         totalqty.setText(totalQty + "");
-        totalcost.setText(totalCost + "");
+        totalcost.setText("₱ "+String.format("%.2f", totalCost) + "");
 
-        if(currentUser.getCartItems(d).size() != 0){
-            toShow.setVisibility(View.GONE);
-
-        } else {
-            item.setVisibility(View.GONE);
+        if(totalQty == 0) {
+            checkout.setClickable(false);
+            checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.disabled));
         }
+        else {
+            checkout.setClickable(true);
+            checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.black));
+        }
+
+        toShow.setVisibility(View.GONE);
+        item.setVisibility(View.GONE);
+
+        if(totalQty == 0){
+            toShow.setVisibility(View.VISIBLE);
+        }else{
+            item.setVisibility(View.VISIBLE);
+        }
+
     }
 }
