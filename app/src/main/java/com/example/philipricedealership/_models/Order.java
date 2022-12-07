@@ -13,7 +13,21 @@ import java.util.ArrayList;
 public class Order implements Serializable {
     private int uid, userId;
     private float total;
-    private String items, date; // <~> + ex : img.jpg+ube+100+1
+    private String items, date;
+
+    public ArrayList<Product> getCartItems(DatabaseHelper dbHelper){
+        ArrayList<Product> itemss = new ArrayList<>();
+        if(items.length() == 0) return itemss;
+        String [] porducts = items.split("<~>");
+        for(int x = 0; x < porducts.length; x++){
+            String [] sparse = porducts[x].split("\\+");
+            if(sparse[0].length() == 0) continue;
+            Product pr = new Product(Integer.parseInt(sparse[0]), Integer.parseInt(sparse[1]));
+            pr.fetchSelf(dbHelper);
+            itemss.add(pr);
+        }
+        return itemss;
+    }
 
     public Order(int uid, int userId, float total, String items, String date) {
         this.uid = uid;
@@ -86,15 +100,15 @@ public class Order implements Serializable {
     public boolean saveState(Context context, DatabaseHelper dbHelper, boolean isNew){
         if(isNew){
             if(dbHelper.insert(getSelfContentValues(), "orders")){
-                System.out.println("Product : New movie Saved Self");
+                Toast.makeText(null, "Order Placed!", Toast.LENGTH_LONG);
                 return true;
             }else{
-                Toast.makeText(null, "Failed to create product", Toast.LENGTH_LONG);
+                Toast.makeText(null, "Failed to place order", Toast.LENGTH_LONG);
                 return false;
             }
         }else{
             if( !dbHelper.update(getSelfContentValues(), "uid="+getUid()+"", "orders") ){
-                Toast.makeText(context, "Failed to save state", Toast.LENGTH_LONG);
+                Toast.makeText(context, "Failed to save place order", Toast.LENGTH_LONG);
                 System.out.println("Product : Updated Self");
                 return false;
             }else{
