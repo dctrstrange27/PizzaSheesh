@@ -71,7 +71,8 @@ public class Product implements Serializable {
     }
 
     public int getImgResId(Context context){
-        return context.getResources().getIdentifier(String.format("drawable/%s", getImgUrl()), null, context.getPackageName());
+        int resid = context.getResources().getIdentifier(String.format("drawable/%s", getImgUrl()), null, context.getPackageName());
+        return resid;
     }
 
     private ContentValues getSelfContentValues(){
@@ -125,7 +126,7 @@ public class Product implements Serializable {
      */
     public static ArrayList <Product> getAllProduct(DatabaseHelper dbHelper){
         ArrayList <Product> alls = new ArrayList<>();
-        Cursor all = dbHelper.execRawQuery("SELECT * FROM product", null);
+        Cursor all = dbHelper.execRawQuery("SELECT uid, name, imgUrl, description, price FROM product", null);
         while(all.moveToNext()){
             alls.add(new Product(
                     all.getInt(0),

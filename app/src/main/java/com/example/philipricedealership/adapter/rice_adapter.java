@@ -33,7 +33,6 @@ public class rice_adapter extends ArrayAdapter<Product> {
         name.setText(rice.getName());
         price.setText("$"+Integer.toString((int) rice.getPrice())+".004");
         img.setImageResource(rice.getImgResId(this.getContext()));
-
         return c;
     }
 
