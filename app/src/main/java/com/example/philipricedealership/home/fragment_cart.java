@@ -57,7 +57,7 @@ public class fragment_cart extends Fragment {
         totalqty = v.findViewById(R.id.totalqty);
         checkout.setOnClickListener( JohnySinsei ->{
             currentUser.placeOrder(getContext(), dbHelper);
-
+            rerender();
             Dialog checkout_dialog = new Dialog(getContext());
             checkout_dialog.setContentView(R.layout.dialog_order_placed);
             checkout_dialog.getWindow().getAttributes().windowAnimations = R.style.diagAnim;
@@ -105,11 +105,14 @@ public class fragment_cart extends Fragment {
             checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.black));
         }
 
-        if(currentUser.getCartItems(d).size() != 0){
-            toShow.setVisibility(View.GONE);
+        toShow.setVisibility(View.GONE);
+        item.setVisibility(View.GONE);
 
-        } else {
-            item.setVisibility(View.GONE);
+        if(totalQty == 0){
+            toShow.setVisibility(View.VISIBLE);
+        }else{
+            item.setVisibility(View.VISIBLE);
         }
+
     }
 }
