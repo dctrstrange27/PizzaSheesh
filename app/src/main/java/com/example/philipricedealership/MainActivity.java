@@ -61,13 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         for (int x = 0; x < vals.length; x++){
             Product prd = new Product(vals[x][0], vals[x][1], vals[x][2], prices[x]);
-            System.out.println("New Prod -> "+prd.toString()+" DrawResId -> " + prd.getImgResId(getApplicationContext()));
             prd.saveState(getApplicationContext(), dbHelper, true);
         }
-
-        ArrayList <Product> prods = Product.getAllProduct(dbHelper);
-
-        for(Product prds : prods) System.out.println(prods.size()+" : "+prods.toString());
 
         login_btn.setOnClickListener(johny -> {
             Intent toLogin = new Intent(getApplicationContext(), login.class);
@@ -85,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
             hasLoggedIn.moveToNext();
             dummyUser = new User(hasLoggedIn.getString(3));
             dummyUser.fetchSelf(dbHelper);
-
             try{
                 Intent homeIntent = new Intent(getApplicationContext(), Home.class);
                 homeIntent.putExtra("currentUser", dummyUser);

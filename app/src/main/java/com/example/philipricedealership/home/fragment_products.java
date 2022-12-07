@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.philipricedealership.R;
+
 import com.example.philipricedealership._models.Product;
 import com.example.philipricedealership._utils.DatabaseHelper;
 import com.example.philipricedealership.adapter.rice_adapter;
@@ -32,6 +33,5 @@ public class fragment_products extends Fragment {
         System.out.println("Products: "+Product.getAllProduct(d));
 
         return  v;
-
     }
 }

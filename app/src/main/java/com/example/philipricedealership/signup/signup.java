@@ -31,7 +31,7 @@ import com.example.philipricedealership.home.Home;
 public class signup extends AppCompatActivity {
 
 
-    private EditText email, username, password, confirm_pass;
+    private EditText email, username, address, password, confirm_pass;
     private Button button;
     private User newUsr;
     private String key;
@@ -54,11 +54,13 @@ public class signup extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         confirm_pass = findViewById(R.id.confirm_pass);
+        address = findViewById(R.id.address);
 
         button = findViewById(R.id.signup);
         button.setOnClickListener( JohnySinsei -> {
             String _email = email.getText().toString().replaceAll("\\s",""),
                     _username = username.getText().toString(),
+                    _address = address.getText().toString(),
                     _password = password.getText().toString().replaceAll("\\s",""),
                     _confirm_pass = confirm_pass.getText().toString().replaceAll("\\s","");
             if (_email.length() == 0 || _username.length() == 0 || _password.length() == 0 || _confirm_pass.length() == 0) {
@@ -69,7 +71,7 @@ public class signup extends AppCompatActivity {
                 Toast.makeText(this, "Confirm Password Doesn't Match", Toast.LENGTH_LONG).show();
                 return;
             }
-            newUsr = new User(_email, _username, Helper.hashPassword(_password), "", "");
+            newUsr = new User(_email, _username, Helper.hashPassword(_password), _address, "");
 
             if (newUsr.checkIfAlreadyExist(dbHelper)) {
                 Toast.makeText(this, "Email is already taken", Toast.LENGTH_LONG).show();
