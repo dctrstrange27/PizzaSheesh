@@ -9,11 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import android.widget.ImageButton;
 
+import android.widget.ListView;
+
+
 import com.example.philipricedealership.R;
+import com.example.philipricedealership._models.Order;
+import com.example.philipricedealership._models.Product;
 import com.example.philipricedealership._models.User;
 import com.example.philipricedealership._utils.DatabaseHelper;
+
+import com.example.philipricedealership.adapter.cart_adapter;
+
 
 public class fragment_cart extends Fragment {
     private Button checkout;
@@ -44,10 +53,17 @@ public class fragment_cart extends Fragment {
             ok.setOnClickListener(JohnySinsei2 -> {
                 checkout_dialog.dismiss();
             });
-
             checkout_dialog.show();
         });
+        ListView item = v.findViewById(R.id.itemList);
+        cart_adapter cart;
 
+        DatabaseHelper d = new DatabaseHelper(v.getContext());
+        Product.getAllProduct(d);
+        cart= new cart_adapter(v.getContext(), currentUser.getCartItems(d), currentUser);
+        item.setAdapter(cart);
         return v;
+
+
     }
 }
