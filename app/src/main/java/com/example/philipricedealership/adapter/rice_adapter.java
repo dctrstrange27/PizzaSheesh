@@ -31,8 +31,8 @@ public class rice_adapter extends ArrayAdapter<Product> {
         TextView price = c.findViewById(R.id.prodPrice);
 
         name.setText(rice.getName());
-        price.setText("$"+Integer.toString((int) rice.getPrice())+".004");
-        img.setImageResource(rice.getImgResId(this.getContext()));
+        price.setText("$"+Integer.toString((int) rice.getPrice())+".00");
+        img.setImageResource(R.drawable.prod_bukopandan5);
 
         return c;
     }
