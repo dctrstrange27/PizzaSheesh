@@ -104,7 +104,6 @@ public class fragment_cart extends Fragment {
             checkout.setClickable(true);
             checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.black));
         }
-
         toShow.setVisibility(View.GONE);
         item.setVisibility(View.GONE);
 

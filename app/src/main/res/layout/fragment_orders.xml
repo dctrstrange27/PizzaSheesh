@@ -27,7 +27,7 @@
                 />
             <ListView
                 android:scrollbars="none"
-                android:id="@+id/riceList"
+                android:id="@+id/orderList"
                 android:layout_width="match_parent"
                 android:layout_height="600dp"
                 android:divider="@null"

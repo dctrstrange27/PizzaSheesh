@@ -158,7 +158,6 @@ public class Order implements Serializable {
                     all.getString(4)
             ));
         }
-
         return alls;
     }
 
