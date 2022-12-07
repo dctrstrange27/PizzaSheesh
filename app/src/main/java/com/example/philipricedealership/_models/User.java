@@ -7,18 +7,63 @@ import android.widget.Toast;
 import com.example.philipricedealership._utils.*;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.mail.internet.ParameterList;
 
 public class User implements Serializable {
     private int uid, state;
-    private String image, email, username, password, address, cart = ""; // <~> + ex : img.jpg+ube+100+1
+    private String image, email, username, password, address, cart; // <~> + ex : id+qty
 
-    public ArrayList<Product> getCartItems(){
+    public ArrayList<Product> getCartItems(DatabaseHelper dbHelper){
         ArrayList<Product> items = new ArrayList<>();
-
-
-
+        if(cart.length() == 0) return items;
+        String [] porducts = cart.split("<~>");
+        for(int x = 0; x < porducts.length; x++){
+            System.out.println("TOSPARSE : " + porducts[x]);
+            String [] sparse = porducts[x].split("\\+");
+            if(sparse[0].length() == 0) continue;
+            Product pr = new Product(Integer.parseInt(sparse[0]), Integer.parseInt(sparse[1]));
+            pr.fetchSelf(dbHelper);
+            items.add(pr);
+        }
         return items;
+    }
+
+    public void addToCart(Product p, Context context, DatabaseHelper dbHelper){
+        ArrayList<Product> mycart = getCartItems(dbHelper);
+        mycart.add(p);
+        setCart(cartStringifyer(mycart));
+        saveState(context, dbHelper, false);
+    }
+
+    public String productCartSplitter(Product p){
+        return String.format("%d+%d",p.getUid(),p.getQty());
+    }
+
+    public String cartStringifyer(ArrayList<Product> p){
+        String res = "";
+        if(p.size() == 0) return res;
+        String arrs[] = new String[p.size()];
+        for(int x = 0; x < p.size(); x++){
+            String stringified = productCartSplitter(p.get(x));
+            arrs[x] = stringified;
+        }
+        res = String.join("<~>", arrs);
+        return res;
+    }
+
+    public void removeFromCart(int uid, Context context, DatabaseHelper dbHelper){
+        ArrayList<Product> mycart = getCartItems(dbHelper);
+        ArrayList<Product> newCart = new ArrayList<>();
+        for(Product pr : mycart){
+            if(pr.getUid() == uid) continue;
+            newCart.add(pr);
+        }
+        setCart(cartStringifyer(newCart));
+        saveState(context, dbHelper, false);
     }
 
     public User(int uid, int state, String image, String email, String username, String password, String address, String cart) {

@@ -11,9 +11,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Product implements Serializable {
-    private int uid;
+    private int uid, qty = 1;
     private String name, imgUrl, description;
     private double price;
+
+    public Double getTotalCost () { return qty * price; }
+
+    public Product(int uid, int qty) {
+        this.uid = uid;
+        this.qty = qty;
+    }
 
     public Product(String name, String imgUrl, String description, double price) {
         this.name = name;
@@ -36,6 +43,18 @@ public class Product implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getUid() {
@@ -87,7 +106,6 @@ public class Product implements Serializable {
     public boolean saveState(Context context, DatabaseHelper dbHelper, boolean isNew){
         if(isNew){
             if(dbHelper.insert(getSelfContentValues(), "product")){
-                System.out.println("Product : New movie Saved Self");
                 return true;
             }else{
                 Toast.makeText(null, "Failed to create product", Toast.LENGTH_LONG);
@@ -96,7 +114,6 @@ public class Product implements Serializable {
         }else{
             if( !dbHelper.update(getSelfContentValues(), "uid="+getUid()+"", "product") ){
                 Toast.makeText(context, "Failed to save state", Toast.LENGTH_LONG);
-                System.out.println("Product : Updated Self");
                 return false;
             }else{
                 fetchSelf(dbHelper);
@@ -107,7 +124,7 @@ public class Product implements Serializable {
 
     public void fetchSelf(DatabaseHelper dbHelper){
         try{
-            Cursor cur = dbHelper.execRawQuery(String.format("SELECT * FROM product WHERE uid=%d;", uid), null);
+            Cursor cur = dbHelper.execRawQuery(String.format("SELECT uid, imgUrl, name, description, price FROM product WHERE uid=%d;", uid), null);
             if (cur == null || cur.getCount() == 0 || !cur.moveToNext()) return;
             setUid(cur.getInt(0));
             setImgUrl(cur.getString(1));
