@@ -25,6 +25,8 @@ import com.example.philipricedealership._utils.DatabaseHelper;
 
 import com.example.philipricedealership.adapter.cart_adapter;
 
+import java.util.ArrayList;
+
 
 public class fragment_cart extends Fragment {
     private Button checkout;
@@ -34,7 +36,7 @@ public class fragment_cart extends Fragment {
     DatabaseHelper d;
     ListView item;
 
-    TextView toShow;
+    TextView toShow, totalqty, totalcost;
     ScrollView scroll;
 
     @Override
@@ -48,6 +50,8 @@ public class fragment_cart extends Fragment {
         scroll = v.findViewById(R.id.scroll);
         toShow = v.findViewById(R.id.toShow);
         checkout = v.findViewById(R.id.checkout);
+        totalcost = v.findViewById(R.id.totalcost);
+        totalqty = v.findViewById(R.id.totalqty);
         checkout.setOnClickListener( JohnySinsei ->{
             currentUser.placeOrder(getContext(), dbHelper);
 
@@ -74,8 +78,20 @@ public class fragment_cart extends Fragment {
     public void rerender(){
         currentUser.fetchSelf(dbHelper);
         Product.getAllProduct(d);
-        cart = new cart_adapter( getContext(), currentUser.getCartItems(d), currentUser, this);
+        ArrayList<Product> userItems = currentUser.getCartItems(d);
+        cart = new cart_adapter( getContext(), userItems, currentUser, this);
         item.setAdapter(cart);
+
+        double totalCost = 0;
+        int totalQty = 0;
+
+        for(Product pr : userItems){
+            totalQty += pr.getQty();
+            totalCost += pr.getTotalCost();
+        }
+
+        totalqty.setText(totalQty + "");
+        totalcost.setText(totalCost + "");
 
         if(currentUser.getCartItems(d).size() != 0){
             toShow.setVisibility(View.GONE);
