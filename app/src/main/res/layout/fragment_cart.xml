@@ -76,17 +76,18 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <Button
-                    android:text="checkout"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="#fff"
-                    android:textSize="13dp"
-                    android:paddingVertical="10dp"
+                    android:id="@+id/checkout"
                     style="@style/checkout_button"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
-                    />
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingVertical="10dp"
+                    android:text="checkout"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="13dp" />
 
             </LinearLayout>
 

@@ -13,6 +13,7 @@ import android.widget.ListView;
 import com.example.philipricedealership.R;
 
 import com.example.philipricedealership._models.Product;
+import com.example.philipricedealership._models.User;
 import com.example.philipricedealership._utils.DatabaseHelper;
 import com.example.philipricedealership.adapter.rice_adapter;
 
@@ -25,10 +26,10 @@ public class fragment_products extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_products, container, false);
         riceList = v.findViewById(R.id.riceList);
-
+        User currentUser = (User) getArguments().getSerializable("currentUser");
         DatabaseHelper d = new DatabaseHelper(v.getContext());
         Product.getAllProduct(d);
-        rice = new rice_adapter(v.getContext(), Product.getAllProduct(d));
+        rice = new rice_adapter(v.getContext(), Product.getAllProduct(d), currentUser);
         riceList.setAdapter(rice);
         riceList.setSmoothScrollbarEnabled(true);
         System.out.println("Products: "+Product.getAllProduct(d));

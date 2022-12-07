@@ -9,6 +9,7 @@ import com.example.philipricedealership._utils.*;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.mail.internet.ParameterList;
@@ -22,7 +23,6 @@ public class User implements Serializable {
         if(cart.length() == 0) return items;
         String [] porducts = cart.split("<~>");
         for(int x = 0; x < porducts.length; x++){
-            System.out.println("TOSPARSE : " + porducts[x]);
             String [] sparse = porducts[x].split("\\+");
             if(sparse[0].length() == 0) continue;
             Product pr = new Product(Integer.parseInt(sparse[0]), Integer.parseInt(sparse[1]));
@@ -35,6 +35,7 @@ public class User implements Serializable {
     public void addToCart(Product p, Context context, DatabaseHelper dbHelper){
         ArrayList<Product> mycart = getCartItems(dbHelper);
         mycart.add(p);
+        Toast.makeText(context, "Added To Cart 🛒", Toast.LENGTH_SHORT).show();
         setCart(cartStringifyer(mycart));
         saveState(context, dbHelper, false);
     }
@@ -55,16 +56,15 @@ public class User implements Serializable {
         return res;
     }
 
-    public void removeFromCart(int uid, Context context, DatabaseHelper dbHelper){
-        ArrayList<Product> mycart = getCartItems(dbHelper);
-        ArrayList<Product> newCart = new ArrayList<>();
-        for(Product pr : mycart){
-            if(pr.getUid() == uid) continue;
-            newCart.add(pr);
-        }
-        setCart(cartStringifyer(newCart));
-        saveState(context, dbHelper, false);
+    public void placeOrder(Context context, DatabaseHelper dbHelper){
+        ArrayList<Product> prd = getCartItems(dbHelper);
+        double total = 0;
+        for(Product p : prd) total += p.getTotalCost();
+        Order ord = new Order(getUid(), total, getCart(), new Date().toLocaleString());
+        ord.saveState(context, dbHelper, true);
     }
+
+
     public User(int uid, int state, String image, String email, String username, String password, String address, String cart) {
         this.uid = uid;
         this.state = state;
