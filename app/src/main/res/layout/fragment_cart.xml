@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context=".home.fragment_home">
-
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
@@ -13,7 +12,6 @@
         android:paddingHorizontal="20dp"
         android:paddingVertical="40dp"
         android:scrollbars="none">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,7 +81,7 @@
                     android:textAllCaps="false"
                     android:fontFamily="@font/poppins_medium"
                     android:textColor="#fff"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:paddingVertical="10dp"
                     style="@style/checkout_button"
                     android:layout_width="290dp"

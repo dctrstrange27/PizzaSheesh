@@ -137,7 +137,6 @@ public class Product implements Serializable {
         }
         return alls;
     }
-
     @Override
     public String toString() {
         return "Product{" +

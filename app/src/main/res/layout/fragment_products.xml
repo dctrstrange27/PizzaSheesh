@@ -27,13 +27,12 @@
                 android:fontFamily="@font/poppins_medium"
                 />
             <ListView
-                android:id="@+id/movieList"
+                android:id="@+id/riceList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="600dp"
                 android:divider="@null"
                 android:dividerHeight="0dp"
                 android:paddingVertical="10dp"
-                android:scrollbars="none"
                 tools:listitem="@layout/product_list" />
         </LinearLayout>
 
