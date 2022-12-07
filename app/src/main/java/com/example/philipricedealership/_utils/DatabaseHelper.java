@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void checkTableExist() {
         SQLiteDatabase db = this.getWritableDatabase();
         String checkUserTable = "CREATE TABLE IF NOT EXISTS user ( uid INTEGER PRIMARY KEY AUTOINCREMENT, state INTEGER, image TEXT, email TEXT, username TEXT, password TEXT, address TEXT, cart TEXT);";
-        String checkProductTable = "CREATE TABLE IF NOT EXISTS product ( uid INTEGER PRIMARY KEY AUTOINCREMENT, imgUrl TEXT, name TEXT, price REAL);";
+        String checkProductTable = "CREATE TABLE IF NOT EXISTS product ( uid INTEGER PRIMARY KEY AUTOINCREMENT, imgUrl TEXT, name TEXT, description TEXT, price REAL);";
         String checkOrderTable = "CREATE TABLE IF NOT EXISTS orders ( uid INTEGER PRIMARY KEY AUTOINCREMENT, userId INTEGER, total REAL, items TEXT, date TEXT);";
         db.execSQL(checkOrderTable);
         db.execSQL(checkProductTable);
