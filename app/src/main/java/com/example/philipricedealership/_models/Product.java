@@ -12,20 +12,30 @@ import java.util.ArrayList;
 
 public class Product implements Serializable {
     private int uid;
-    private String name, imgUrl;
-    private float price;
+    private String name, imgUrl, description;
+    private double price;
 
-    public Product(String name, String imgUrl, float price) {
+    public Product(String name, String imgUrl, String description, double price) {
         this.name = name;
         this.imgUrl = imgUrl;
         this.price = price;
+        this.description = description;
     }
 
-    public Product(int uid, String name, String imgUrl, float price) {
+    public Product(int uid, String name, String imgUrl, String description, double price) {
         this.uid = uid;
         this.name = name;
         this.imgUrl = imgUrl;
+        this.description = description;
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getUid() {
@@ -52,7 +62,7 @@ public class Product implements Serializable {
         this.imgUrl = imgUrl;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -60,7 +70,7 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public int getProductImageResId(Context context){
+    public int getImgResId(Context context){
         return context.getResources().getIdentifier(String.format("drawable/%s", getImgUrl()), null, context.getPackageName());
     }
 
@@ -68,6 +78,7 @@ public class Product implements Serializable {
         ContentValues vals = new ContentValues();
         vals.put("imgUrl", imgUrl);
         vals.put("name", name);
+        vals.put("description", description);
         vals.put("price", price);
         return vals;
     }
@@ -100,7 +111,8 @@ public class Product implements Serializable {
             setUid(cur.getInt(0));
             setImgUrl(cur.getString(1));
             setName(cur.getString(2));
-            setPrice(cur.getFloat(3));
+            setDescription(cur.getString(3));
+            setPrice(cur.getFloat(4));
         }catch(Exception e){
             System.out.println("ERR ON FETCH " + e);
         }
@@ -120,11 +132,22 @@ public class Product implements Serializable {
                     all.getInt(0),
                     all.getString(1),
                     all.getString(2),
-                    all.getFloat(3)
+                    all.getString(3),
+                    all.getDouble(4)
             ));
         }
 
         return alls;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "uid=" + uid +
+                ", name='" + name + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
