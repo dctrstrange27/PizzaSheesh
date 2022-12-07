@@ -9,7 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.philipricedealership.R;
+import com.example.philipricedealership._models.Order;
 import com.example.philipricedealership._models.User;
+import com.example.philipricedealership._utils.DatabaseHelper;
+
+import java.util.ArrayList;
 
 
 public class fragment_orders extends Fragment {
@@ -19,7 +23,9 @@ public class fragment_orders extends Fragment {
         // Inflate the layout for this fragment
 
         User currentUser = (User) getArguments().getSerializable("currentUser");
-        System.out.println("USER "+currentUser.toString());
+        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+        ArrayList<Order> ords = Order.getAllOrderFrom(currentUser.getUid(), dbHelper);
+        for(Order o : ords) System.out.println("My Orders -> "+o.toString());
         return inflater.inflate(R.layout.fragment_orders, container, false);
     }
 }
