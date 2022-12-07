@@ -12,9 +12,11 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.ZonedDateTime;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 import java.util.TimeZone;
 public class Helper {
@@ -50,6 +52,13 @@ public class Helper {
         String strry [] = from.split(",");
         for(String st : strry) if(st.equals(what)) return true;
         return false;
+    }
+
+    public static String beutifyDate(Date dt){
+        Locale locale = new Locale("fr", "FR");
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, locale);
+        String date = dateFormat.format(new Date());
+        return date;
     }
 
     public static String seatGenerator(int startseat, int endseat){

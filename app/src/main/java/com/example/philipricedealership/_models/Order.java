@@ -100,16 +100,15 @@ public class Order implements Serializable {
     public boolean saveState(Context context, DatabaseHelper dbHelper, boolean isNew){
         if(isNew){
             if(dbHelper.insert(getSelfContentValues(), "orders")){
-                Toast.makeText(null, "Order Placed!", Toast.LENGTH_LONG);
+                Toast.makeText(context, "Order Placed!", Toast.LENGTH_LONG);
                 return true;
             }else{
-                Toast.makeText(null, "Failed to place order", Toast.LENGTH_LONG);
+                Toast.makeText(context, "Failed to place order", Toast.LENGTH_LONG);
                 return false;
             }
         }else{
             if( !dbHelper.update(getSelfContentValues(), "uid="+getUid()+"", "orders") ){
                 Toast.makeText(context, "Failed to save place order", Toast.LENGTH_LONG);
-                System.out.println("Product : Updated Self");
                 return false;
             }else{
                 fetchSelf(dbHelper);
@@ -134,8 +133,22 @@ public class Order implements Serializable {
 
     public static ArrayList <Order> getAllOrder(DatabaseHelper dbHelper){
         ArrayList <Order> alls = new ArrayList<>();
-        Cursor all = dbHelper.execRawQuery("SELECT * FROM orders", null);
-        System.out.println(all.toString());
+        Cursor all = dbHelper.execRawQuery("SELECT uid, userId, total, items, date FROM orders", null);
+        while(all.moveToNext()){
+            alls.add(new Order(
+                    all.getInt(0),
+                    all.getInt(1),
+                    all.getDouble(2),
+                    all.getString(3),
+                    all.getString(4)
+            ));
+        }
+        return alls;
+    }
+
+    public static ArrayList <Order> getAllOrderFrom(int userId, DatabaseHelper dbHelper){
+        ArrayList <Order> alls = new ArrayList<>();
+        Cursor all = dbHelper.execRawQuery("SELECT uid, userId, total, items, date FROM orders where userId="+userId, null);
         while(all.moveToNext()){
             alls.add(new Order(
                     all.getInt(0),
@@ -149,4 +162,14 @@ public class Order implements Serializable {
         return alls;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "uid=" + uid +
+                ", userId=" + userId +
+                ", total=" + total +
+                ", items='" + items + '\'' +
+                ", date='" + date + '\'' +
+                '}';
+    }
 }

@@ -38,6 +38,7 @@ public class User implements Serializable {
         Toast.makeText(context, "Added To Cart 🛒", Toast.LENGTH_SHORT).show();
         setCart(cartStringifyer(mycart));
         saveState(context, dbHelper, false);
+        System.out.println("Your Cart -> "+getCart());
     }
 
     public String productCartSplitter(Product p){
@@ -61,9 +62,13 @@ public class User implements Serializable {
         double total = 0;
         for(Product p : prd) total += p.getTotalCost();
         Order ord = new Order(getUid(), total, getCart(), new Date().toLocaleString());
-        ord.saveState(context, dbHelper, true);
+        if(ord.saveState(context, dbHelper, true)){
+            ArrayList<Order> orders = Order.getAllOrderFrom(getUid(), dbHelper);
+            for(Order or : orders) System.out.println("ORDS -> "+or.toString());
+        }
+        setCart("");
+        saveState(context, dbHelper, false);
     }
-
 
     public User(int uid, int state, String image, String email, String username, String password, String address, String cart) {
         this.uid = uid;

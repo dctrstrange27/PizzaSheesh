@@ -20,7 +20,6 @@ import com.example.philipricedealership._utils.DatabaseHelper;
 import java.util.ArrayList;
 
 public class rice_adapter extends ArrayAdapter<Product> {
-    static Product rice;
     private User currentUser;
     private DatabaseHelper dbHelper;
     public rice_adapter(Context cont, ArrayList<Product> pList, User currentUser){
@@ -29,7 +28,7 @@ public class rice_adapter extends ArrayAdapter<Product> {
         this.dbHelper = new DatabaseHelper(getContext());
     }
     public View getView(int position, @Nullable View c, @NonNull ViewGroup parent) {
-        rice = getItem(position);
+        Product rice = getItem(position);
         if(c == null){
             c = LayoutInflater.from(getContext()).inflate(R.layout.product_list,parent,false);
         }
@@ -43,6 +42,7 @@ public class rice_adapter extends ArrayAdapter<Product> {
         img.setImageResource(rice.getImgResId(this.getContext()));
         addToCart.setOnClickListener(e -> {
             currentUser.addToCart(rice, getContext(), dbHelper);
+            System.out.println("FOCUSED ITEM is -> "+rice+" Adaptor view index is -> "+ position);
         });
 
         return c;
