@@ -33,10 +33,12 @@ public class cart_adapter extends ArrayAdapter<Product> {
         ImageView img = c.findViewById(R.id.item_pic);
         TextView name = c.findViewById(R.id.item_name);
         TextView price = c.findViewById(R.id.item_price);
+        TextView desc = c.findViewById(R.id.item_desc);
         ImageButton delete = c.findViewById(R.id.delete);
 
         delete.setClickable(true);
         name.setText(rice.getName());
+        desc.setText(rice.getDescription());
         price.setText("$"+Integer.toString((int) rice.getPrice())+".00");
         img.setImageResource(rice.getImgResId(this.getContext()));
 

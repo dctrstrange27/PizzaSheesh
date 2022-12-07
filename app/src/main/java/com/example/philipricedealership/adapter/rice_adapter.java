@@ -41,9 +41,11 @@ public class rice_adapter extends ArrayAdapter<Product> {
         ImageView img = c.findViewById(R.id.pic);
         TextView name = c.findViewById(R.id.prodName);
         TextView price = c.findViewById(R.id.prodPrice);
+        TextView desc = c.findViewById(R.id.prodDesc);
         Button addToCart = c.findViewById(R.id.addToCart);
 
         name.setText(rice.getName());
+        desc.setText(rice.getDescription());
         price.setText("$"+Integer.toString((int) rice.getPrice())+".00");
         img.setImageResource(rice.getImgResId(this.getContext()));
         setBtnState(addToCart, rice);

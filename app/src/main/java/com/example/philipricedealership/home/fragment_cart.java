@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 
 import com.example.philipricedealership.R;
@@ -57,11 +59,25 @@ public class fragment_cart extends Fragment {
         });
         ListView item = v.findViewById(R.id.itemList);
         cart_adapter cart;
-
+        TextView toShow;
+        ScrollView scroll;
+        scroll = v.findViewById(R.id.scroll);
+        toShow = v.findViewById(R.id.toShow);
         DatabaseHelper d = new DatabaseHelper(v.getContext());
         Product.getAllProduct(d);
         cart= new cart_adapter(v.getContext(), currentUser.getCartItems(d), currentUser);
         item.setAdapter(cart);
+
+        if(currentUser.getCartItems(d).size() != 0){
+            toShow.setVisibility(View.GONE);
+
+        } else {
+            item.setVisibility(View.GONE);
+        }
+
+
+
+
         return v;
 
 
