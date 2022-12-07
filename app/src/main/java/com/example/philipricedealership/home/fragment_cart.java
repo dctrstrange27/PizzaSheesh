@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 
 import com.example.philipricedealership.R;
@@ -32,6 +34,9 @@ public class fragment_cart extends Fragment {
     DatabaseHelper d;
     ListView item;
 
+    TextView toShow;
+    ScrollView scroll;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,6 +45,8 @@ public class fragment_cart extends Fragment {
         dbHelper = new DatabaseHelper(getContext());
         currentUser = (User) getArguments().getSerializable("currentUser");
 
+        scroll = v.findViewById(R.id.scroll);
+        toShow = v.findViewById(R.id.toShow);
         checkout = v.findViewById(R.id.checkout);
         checkout.setOnClickListener( JohnySinsei ->{
             currentUser.placeOrder(getContext(), dbHelper);
@@ -60,9 +67,7 @@ public class fragment_cart extends Fragment {
         });
         item = v.findViewById(R.id.itemList);
         d = new DatabaseHelper(v.getContext());
-
         rerender();
-
         return v;
     }
 
@@ -71,5 +76,12 @@ public class fragment_cart extends Fragment {
         Product.getAllProduct(d);
         cart = new cart_adapter( getContext(), currentUser.getCartItems(d), currentUser, this);
         item.setAdapter(cart);
+
+        if(currentUser.getCartItems(d).size() != 0){
+            toShow.setVisibility(View.GONE);
+
+        } else {
+            item.setVisibility(View.GONE);
+        }
     }
 }
