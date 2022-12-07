@@ -14,6 +14,8 @@ import com.example.philipricedealership.home.Home;
 import com.example.philipricedealership.signup.login;
 import com.example.philipricedealership.signup.signup;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private Button login_btn,signup_btn;
     private User dummyUser;
@@ -57,11 +59,15 @@ public class MainActivity extends AppCompatActivity {
                 1880, 880
         };
 
-        System.out.println("RUN");
         for (int x = 0; x < vals.length; x++){
             Product prd = new Product(vals[x][0], vals[x][1], vals[x][2], prices[x]);
             System.out.println("New Prod -> "+prd.toString()+" DrawResId -> " + prd.getImgResId(getApplicationContext()));
+            prd.saveState(getApplicationContext(), dbHelper, true);
         }
+
+        ArrayList <Product> prods = Product.getAllProduct(dbHelper);
+
+        for(Product prds : prods) System.out.println(prods.size()+" : "+prods.toString());
 
         login_btn.setOnClickListener(johny -> {
             Intent toLogin = new Intent(getApplicationContext(), login.class);
