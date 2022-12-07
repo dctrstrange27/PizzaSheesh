@@ -27,6 +27,7 @@
                 android:fontFamily="@font/poppins_medium"
                 />
             <ListView
+                android:scrollbars="none"
                 android:id="@+id/riceList"
                 android:layout_width="match_parent"
                 android:layout_height="600dp"
