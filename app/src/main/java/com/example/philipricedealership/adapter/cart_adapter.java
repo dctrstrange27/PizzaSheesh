@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,7 +33,7 @@ public class cart_adapter extends ArrayAdapter<Product> {
         ImageView img = c.findViewById(R.id.item_pic);
         TextView name = c.findViewById(R.id.item_name);
         TextView price = c.findViewById(R.id.item_price);
-        Button delete = c.findViewById(R.id.delete);
+        ImageButton delete = c.findViewById(R.id.delete);
 
         delete.setClickable(true);
         name.setText(rice.getName());
