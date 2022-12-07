@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         signup_btn = findViewById(R.id.signup_btn);
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
-        dbHelper.dropDbs(new String[]{"product","user"});
+        dbHelper.dropDbs(new String[]{"product"});
         dbHelper.checkTableExist();
 
         String vals[][] = {
