@@ -18,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         dropDbs(new String[]{"product", "user", "order"});
+        onCreate(getWritableDatabase());
     }
     public void checkTableExist() {
         SQLiteDatabase db = this.getWritableDatabase();
