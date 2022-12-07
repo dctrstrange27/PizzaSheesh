@@ -25,11 +25,19 @@ import com.example.philipricedealership._utils.DatabaseHelper;
 
 import com.example.philipricedealership.adapter.cart_adapter;
 
+import java.util.ArrayList;
+
 
 public class fragment_cart extends Fragment {
     private Button checkout;
     private DatabaseHelper dbHelper;
     private User currentUser;
+    cart_adapter cart;
+    DatabaseHelper d;
+    ListView item;
+
+    TextView toShow, totalqty, totalcost;
+    ScrollView scroll;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,7 +47,11 @@ public class fragment_cart extends Fragment {
         dbHelper = new DatabaseHelper(getContext());
         currentUser = (User) getArguments().getSerializable("currentUser");
 
+        scroll = v.findViewById(R.id.scroll);
+        toShow = v.findViewById(R.id.toShow);
         checkout = v.findViewById(R.id.checkout);
+        totalcost = v.findViewById(R.id.totalcost);
+        totalqty = v.findViewById(R.id.totalqty);
         checkout.setOnClickListener( JohnySinsei ->{
             currentUser.placeOrder(getContext(), dbHelper);
 
@@ -57,16 +69,29 @@ public class fragment_cart extends Fragment {
             });
             checkout_dialog.show();
         });
-        ListView item = v.findViewById(R.id.itemList);
-        cart_adapter cart;
-        TextView toShow;
-        ScrollView scroll;
-        scroll = v.findViewById(R.id.scroll);
-        toShow = v.findViewById(R.id.toShow);
-        DatabaseHelper d = new DatabaseHelper(v.getContext());
+        item = v.findViewById(R.id.itemList);
+        d = new DatabaseHelper(v.getContext());
+        rerender();
+        return v;
+    }
+
+    public void rerender(){
+        currentUser.fetchSelf(dbHelper);
         Product.getAllProduct(d);
-        cart= new cart_adapter(v.getContext(), currentUser.getCartItems(d), currentUser);
+        ArrayList<Product> userItems = currentUser.getCartItems(d);
+        cart = new cart_adapter( getContext(), userItems, currentUser, this);
         item.setAdapter(cart);
+
+        double totalCost = 0;
+        int totalQty = 0;
+
+        for(Product pr : userItems){
+            totalQty += pr.getQty();
+            totalCost += pr.getTotalCost();
+        }
+
+        totalqty.setText(totalQty + "");
+        totalcost.setText(totalCost + "");
 
         if(currentUser.getCartItems(d).size() != 0){
             toShow.setVisibility(View.GONE);
@@ -74,12 +99,5 @@ public class fragment_cart extends Fragment {
         } else {
             item.setVisibility(View.GONE);
         }
-
-
-
-
-        return v;
-
-
     }
 }

@@ -44,10 +44,18 @@ public class User implements Serializable {
         mycart.add(p);
         Toast.makeText(context, "Added To Cart 🛒", Toast.LENGTH_SHORT).show();
         setCart(cartStringifyer(mycart));
-        System.out.println(p.toString());
         saveState(context, dbHelper, false);
-        System.out.println("Your Cart -> " + getCart());
     }
+
+    public void removeFromCart(Product p, Context context, DatabaseHelper dbHelper) {
+        ArrayList<Product> mycart = getCartItems(dbHelper);
+        ArrayList<Product> newCart = new ArrayList<>();
+        for(Product pr : mycart) if(pr.getUid() != p.getUid()) newCart.add(pr);
+        Toast.makeText(context, "Removed From Cart ❌", Toast.LENGTH_SHORT).show();
+        setCart(cartStringifyer(newCart));
+        saveState(context, dbHelper, false);
+    }
+
 
     public String productCartSplitter(Product p) {
         return String.format("%d+%d", p.getUid(), p.getQty());
