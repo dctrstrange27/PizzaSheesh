@@ -78,6 +78,7 @@ public class fragment_cart extends Fragment {
     }
 
     public void rerender(){
+        System.out.println("Rerendered");
         currentUser.fetchSelf(dbHelper);
         Product.getAllProduct(d);
         ArrayList<Product> userItems = currentUser.getCartItems(d);
