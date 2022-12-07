@@ -94,7 +94,7 @@ public class fragment_cart extends Fragment {
         }
 
         totalqty.setText(totalQty + "");
-        totalcost.setText(totalCost + "");
+        totalcost.setText("₱ "+String.format("%.2f", totalCost) + "");
 
         if(totalQty == 0) {
             checkout.setClickable(false);

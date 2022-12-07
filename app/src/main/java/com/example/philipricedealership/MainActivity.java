@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         signup_btn = findViewById(R.id.signup_btn);
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
+        dbHelper.dropDbs(new String[] {"product"});
         dbHelper.checkTableExist();
 
         String vals[][] = {
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 {"Jasmine Sweet Rice", "prod_jasminsweetrice25", "25kg, whole grain, imported, walang amoy"},
                 {"Mekeni Rice", "prod_mekenirice25", "25kg, medyo maalsa, malambot, local"},
                 {"Pandan Gold", "prod_pandangold25", "25kg, malambot, commercial, local"},
-                {"Pandan Gold", "prod_pandandgold5", "5kg, whole grain, imported, malambot"},
+                {"Pandan Gold", "prod_pandangold5", "5kg, whole grain, imported, malambot"},
                 {"Princess Hasmine", "prod_princesshasmine50", "50kg"},
                 {"Rapido", "prod_rapido50", "50kg, imported, maalsa"},
                 {"Sakura", "prod_sakura25", "25kg, local, malambot"},
