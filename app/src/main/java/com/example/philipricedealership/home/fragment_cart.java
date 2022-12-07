@@ -28,6 +28,9 @@ public class fragment_cart extends Fragment {
     private Button checkout;
     private DatabaseHelper dbHelper;
     private User currentUser;
+    cart_adapter cart;
+    DatabaseHelper d;
+    ListView item;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,15 +58,18 @@ public class fragment_cart extends Fragment {
             });
             checkout_dialog.show();
         });
-        ListView item = v.findViewById(R.id.itemList);
-        cart_adapter cart;
+        item = v.findViewById(R.id.itemList);
+        d = new DatabaseHelper(v.getContext());
 
-        DatabaseHelper d = new DatabaseHelper(v.getContext());
-        Product.getAllProduct(d);
-        cart= new cart_adapter(v.getContext(), currentUser.getCartItems(d), currentUser);
-        item.setAdapter(cart);
+        rerender();
+
         return v;
+    }
 
-
+    public void rerender(){
+        currentUser.fetchSelf(dbHelper);
+        Product.getAllProduct(d);
+        cart = new cart_adapter( getContext(), currentUser.getCartItems(d), currentUser, this);
+        item.setAdapter(cart);
     }
 }
