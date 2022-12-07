@@ -31,15 +31,14 @@ public class User implements Serializable {
         }
         return items;
     }
-
     public void addToCart(Product p, Context context, DatabaseHelper dbHelper){
         ArrayList<Product> mycart = getCartItems(dbHelper);
         mycart.add(p);
         Toast.makeText(context, "Added To Cart 🛒", Toast.LENGTH_SHORT).show();
         setCart(cartStringifyer(mycart));
+        System.out.println(p.toString());
         saveState(context, dbHelper, false);
     }
-
     public String productCartSplitter(Product p){
         return String.format("%d+%d",p.getUid(),p.getQty());
     }
