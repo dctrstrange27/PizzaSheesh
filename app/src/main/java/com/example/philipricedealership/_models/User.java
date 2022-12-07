@@ -7,10 +7,19 @@ import android.widget.Toast;
 import com.example.philipricedealership._utils.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements Serializable {
     private int uid, state;
-    private String image, email, username, password, address, cart;
+    private String image, email, username, password, address, cart = ""; // <~> + ex : img.jpg+ube+100+1
+
+    public ArrayList<Product> getCartItems(){
+        ArrayList<Product> items = new ArrayList<>();
+
+
+
+        return items;
+    }
 
     public User(int uid, int state, String image, String email, String username, String password, String address, String cart) {
         this.uid = uid;
