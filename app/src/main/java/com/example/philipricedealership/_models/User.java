@@ -65,7 +65,6 @@ public class User implements Serializable {
         setCart(cartStringifyer(newCart));
         saveState(context, dbHelper, false);
     }
-
     public User(int uid, int state, String image, String email, String username, String password, String address, String cart) {
         this.uid = uid;
         this.state = state;
@@ -76,7 +75,6 @@ public class User implements Serializable {
         this.address = address;
         this.cart = cart;
     }
-
     public User(String image, String email, String username, String password, String address, String cart) {
         this.image = image;
         this.email = email;
@@ -85,7 +83,6 @@ public class User implements Serializable {
         this.address = address;
         this.cart = cart;
     }
-
     public User(String email, String username, String password, String address, String cart) {
         this.email = email;
         this.username = username;
@@ -179,7 +176,6 @@ public class User implements Serializable {
         vals.put("cart", this.cart);
         return vals;
     }
-
     /* Saves current object state to user table
     *
      * @args DatabaseHelper an instance of DatabaseHelper
@@ -210,7 +206,6 @@ public class User implements Serializable {
             }
         }
     }
-
     public void fetchSelf(DatabaseHelper dbHelper){
         try{
             Cursor findUser = dbHelper.execRawQuery(String.format("SELECT * FROM user WHERE email='%s';", email), null);
@@ -228,7 +223,6 @@ public class User implements Serializable {
             System.out.println("ERR ON FETCH " + e);
         }
     }
-
     @Override
     public String toString() {
         return "User{" +
