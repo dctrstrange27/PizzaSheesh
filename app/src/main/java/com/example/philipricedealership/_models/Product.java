@@ -125,8 +125,7 @@ public class Product implements Serializable {
      */
     public static ArrayList <Product> getAllProduct(DatabaseHelper dbHelper){
         ArrayList <Product> alls = new ArrayList<>();
-        Cursor all = dbHelper.execRawQuery("SELECT * FROM movie", null);
-
+        Cursor all = dbHelper.execRawQuery("SELECT * FROM product", null);
         while(all.moveToNext()){
             alls.add(new Product(
                     all.getInt(0),
@@ -136,7 +135,6 @@ public class Product implements Serializable {
                     all.getDouble(4)
             ));
         }
-
         return alls;
     }
 
