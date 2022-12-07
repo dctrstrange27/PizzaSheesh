@@ -121,7 +121,7 @@ public class Order implements Serializable {
     public static ArrayList <Order> getAllOrder(DatabaseHelper dbHelper){
         ArrayList <Order> alls = new ArrayList<>();
         Cursor all = dbHelper.execRawQuery("SELECT * FROM orders", null);
-
+        System.out.println(all.toString());
         while(all.moveToNext()){
             alls.add(new Order(
                     all.getInt(0),

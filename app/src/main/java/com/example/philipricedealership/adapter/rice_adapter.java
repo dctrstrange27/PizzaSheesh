@@ -32,7 +32,7 @@ public class rice_adapter extends ArrayAdapter<Product> {
         TextView price = c.findViewById(R.id.prodPrice);
 
         name.setText(rice.getName());
-        price.setText((int) rice.getPrice());
+        price.setText(Integer.toString((int) rice.getPrice()));
         img.setImageResource(resId);
 
         return c;

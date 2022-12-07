@@ -26,8 +26,10 @@ public class fragment_products extends Fragment {
         riceList = v.findViewById(R.id.riceList);
 
         DatabaseHelper d = new DatabaseHelper(v.getContext());
+        Product.getAllProduct(d);
         rice = new rice_adapter(v.getContext(), Product.getAllProduct(d));
         riceList.setAdapter(rice);
+        System.out.println("Products: "+Product.getAllProduct(d));
 
         return  v;
 
