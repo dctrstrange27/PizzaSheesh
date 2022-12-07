@@ -1,8 +1,11 @@
 package com.example.philipricedealership.home;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -58,7 +61,7 @@ public class fragment_cart extends Fragment {
             Dialog checkout_dialog = new Dialog(getContext());
             checkout_dialog.setContentView(R.layout.dialog_order_placed);
             checkout_dialog.getWindow().getAttributes().windowAnimations = R.style.diagAnim;
-
+            checkout_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             ImageButton dialogClose = checkout_dialog.findViewById(R.id.closeV);
             dialogClose.setOnClickListener(JohnySinsei2 -> {
                 checkout_dialog.dismiss();
@@ -92,6 +95,15 @@ public class fragment_cart extends Fragment {
 
         totalqty.setText(totalQty + "");
         totalcost.setText(totalCost + "");
+
+        if(totalQty == 0) {
+            checkout.setClickable(false);
+            checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.disabled));
+        }
+        else {
+            checkout.setClickable(true);
+            checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.black));
+        }
 
         if(currentUser.getCartItems(d).size() != 0){
             toShow.setVisibility(View.GONE);
