@@ -5,6 +5,7 @@
     android:orientation="horizontal"
     >
     <ImageView
+        android:id="@+id/pic"
         android:layout_weight=".30"
         android:layout_width="0dp"
         android:layout_height="110dp"
@@ -18,6 +19,7 @@
         android:orientation="vertical"
         >
         <TextView
+            android:id="@+id/prodName"
             android:fontFamily="@font/poppins_bold"
             android:text="Name"
             android:textColor="#000"
@@ -25,6 +27,7 @@
             android:layout_width="wrap_content"
              android:layout_height="wrap_content"/>
         <TextView
+            android:id="@+id/prodPrice"
             android:fontFamily="@font/poppins_medium"
             android:text="$40.00"
             android:textColor="#000"
@@ -39,6 +42,7 @@
         android:gravity="center"
         >
         <Button
+            android:id="@+id/addToCart"
             android:fontFamily="@font/poppins_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
