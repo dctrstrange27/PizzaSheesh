@@ -1,9 +1,12 @@
 package com.example.philipricedealership.adapter;
 
 import android.content.Context;
+import android.graphics.Movie;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,6 +19,7 @@ import com.example.philipricedealership._models.Product;
 import com.example.philipricedealership.R;
 import com.example.philipricedealership._models.User;
 import com.example.philipricedealership._utils.DatabaseHelper;
+import com.example.philipricedealership.home.Home;
 
 import java.util.ArrayList;
 
@@ -27,6 +31,7 @@ public class rice_adapter extends ArrayAdapter<Product> {
         this.currentUser = currentUser;
         this.dbHelper = new DatabaseHelper(getContext());
     }
+
     public View getView(int position, @Nullable View c, @NonNull ViewGroup parent) {
         Product rice = getItem(position);
         if(c == null){
