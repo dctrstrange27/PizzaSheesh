@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Order implements Serializable {
     private int uid, userId;
-    private float total;
+    private double total;
     private String items, date;
 
     public ArrayList<Product> getCartItems(DatabaseHelper dbHelper){
@@ -29,7 +29,7 @@ public class Order implements Serializable {
         return itemss;
     }
 
-    public Order(int uid, int userId, float total, String items, String date) {
+    public Order(int uid, int userId, double total, String items, String date) {
         this.uid = uid;
         this.userId = userId;
         this.total = total;
@@ -37,7 +37,7 @@ public class Order implements Serializable {
         this.date = date;
     }
 
-    public Order(int userId, float total, String items, String date) {
+    public Order(int userId, double total, String items, String date) {
         this.userId = userId;
         this.total = total;
         this.items = items;
@@ -64,11 +64,11 @@ public class Order implements Serializable {
         this.userId = userId;
     }
 
-    public float getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(float total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 
@@ -140,7 +140,7 @@ public class Order implements Serializable {
             alls.add(new Order(
                     all.getInt(0),
                     all.getInt(1),
-                    all.getFloat(2),
+                    all.getDouble(2),
                     all.getString(3),
                     all.getString(4)
             ));

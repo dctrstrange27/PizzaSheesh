@@ -38,7 +38,6 @@ public class User implements Serializable {
         Toast.makeText(context, "Added To Cart 🛒", Toast.LENGTH_SHORT).show();
         setCart(cartStringifyer(mycart));
         saveState(context, dbHelper, false);
-        System.out.println("Current Cart -> "+getCart());
     }
 
     public String productCartSplitter(Product p){
@@ -65,16 +64,6 @@ public class User implements Serializable {
         ord.saveState(context, dbHelper, true);
     }
 
-    public void removeFromCart(int uid, Context context, DatabaseHelper dbHelper){
-        ArrayList<Product> mycart = getCartItems(dbHelper);
-        ArrayList<Product> newCart = new ArrayList<>();
-        for(Product pr : mycart){
-            if(pr.getUid() == uid) continue;
-            newCart.add(pr);
-        }
-        setCart(cartStringifyer(newCart));
-        saveState(context, dbHelper, false);
-    }
 
     public User(int uid, int state, String image, String email, String username, String password, String address, String cart) {
         this.uid = uid;
@@ -86,7 +75,6 @@ public class User implements Serializable {
         this.address = address;
         this.cart = cart;
     }
-
     public User(String image, String email, String username, String password, String address, String cart) {
         this.image = image;
         this.email = email;
@@ -95,7 +83,6 @@ public class User implements Serializable {
         this.address = address;
         this.cart = cart;
     }
-
     public User(String email, String username, String password, String address, String cart) {
         this.email = email;
         this.username = username;
@@ -189,7 +176,6 @@ public class User implements Serializable {
         vals.put("cart", this.cart);
         return vals;
     }
-
     /* Saves current object state to user table
     *
      * @args DatabaseHelper an instance of DatabaseHelper
@@ -220,7 +206,6 @@ public class User implements Serializable {
             }
         }
     }
-
     public void fetchSelf(DatabaseHelper dbHelper){
         try{
             Cursor findUser = dbHelper.execRawQuery(String.format("SELECT * FROM user WHERE email='%s';", email), null);
@@ -238,7 +223,6 @@ public class User implements Serializable {
             System.out.println("ERR ON FETCH " + e);
         }
     }
-
     @Override
     public String toString() {
         return "User{" +

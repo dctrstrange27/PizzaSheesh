@@ -31,8 +31,8 @@ public class fragment_products extends Fragment {
         Product.getAllProduct(d);
         rice = new rice_adapter(v.getContext(), Product.getAllProduct(d), currentUser);
         riceList.setAdapter(rice);
+        riceList.setSmoothScrollbarEnabled(true);
         System.out.println("Products: "+Product.getAllProduct(d));
-
         return  v;
     }
 }

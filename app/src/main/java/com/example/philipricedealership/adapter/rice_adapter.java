@@ -39,7 +39,7 @@ public class rice_adapter extends ArrayAdapter<Product> {
         Button addToCart = c.findViewById(R.id.addToCart);
 
         name.setText(rice.getName());
-        price.setText("$"+Integer.toString((int) rice.getPrice())+".004");
+        price.setText("$"+Integer.toString((int) rice.getPrice())+".00");
         img.setImageResource(rice.getImgResId(this.getContext()));
         addToCart.setOnClickListener(e -> {
             currentUser.addToCart(rice, getContext(), dbHelper);
@@ -47,6 +47,4 @@ public class rice_adapter extends ArrayAdapter<Product> {
 
         return c;
     }
-
-
 }
