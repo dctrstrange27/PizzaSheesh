@@ -63,9 +63,6 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("New Prod -> "+prd.toString()+" DrawResId -> " + prd.getImgResId(getApplicationContext()));
         }
 
-        finish();
-        System.exit(0);
-
         login_btn.setOnClickListener(johny -> {
             Intent toLogin = new Intent(getApplicationContext(), login.class);
             startActivity(toLogin);
