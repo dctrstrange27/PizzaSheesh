@@ -27,13 +27,12 @@ public class rice_adapter extends ArrayAdapter<Product> {
             c = LayoutInflater.from(getContext()).inflate(R.layout.product_list,parent,false);
         }
         ImageView img = c.findViewById(R.id.pic);
-        int resId = getContext().getResources().getIdentifier(String.format("drawable/%s", rice.getImgUrl()), null, getContext().getPackageName());
         TextView name = c.findViewById(R.id.prodName);
         TextView price = c.findViewById(R.id.prodPrice);
 
         name.setText(rice.getName());
-        price.setText(Integer.toString((int) rice.getPrice()));
-        img.setImageResource(resId);
+        price.setText("$"+Integer.toString((int) rice.getPrice())+".004");
+        img.setImageResource(rice.getImgResId(this.getContext()));
 
         return c;
     }
