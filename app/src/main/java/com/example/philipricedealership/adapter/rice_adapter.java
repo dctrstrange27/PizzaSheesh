@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.example.philipricedealership._models.Product;
 import com.example.philipricedealership.R;
@@ -45,11 +46,20 @@ public class rice_adapter extends ArrayAdapter<Product> {
         name.setText(rice.getName());
         price.setText("$"+Integer.toString((int) rice.getPrice())+".00");
         img.setImageResource(rice.getImgResId(this.getContext()));
+        setBtnState(addToCart, rice);
         addToCart.setOnClickListener(e -> {
             currentUser.addToCart(rice, getContext(), dbHelper);
-            System.out.println("FOCUSED ITEM is -> "+rice+" Adaptor view index is -> "+ position);
+            currentUser.fetchSelf(dbHelper);
+            setBtnState(addToCart, rice);
         });
-
         return c;
+    }
+
+    private void setBtnState(Button target, Product p) {
+        if(currentUser.isPresentInCart(p.getUid(), dbHelper)){
+            target.setClickable(false);
+            target.setText("Added");
+            target.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.disabled));
+        }
     }
 }
