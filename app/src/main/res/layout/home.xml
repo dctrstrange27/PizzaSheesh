@@ -11,7 +11,6 @@
                 android:id="@+id/fragmentContainer"
                 />
     <LinearLayout
-        android:background="#ADFFFFFF"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

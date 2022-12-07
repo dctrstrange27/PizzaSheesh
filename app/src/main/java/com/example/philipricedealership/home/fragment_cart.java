@@ -50,7 +50,6 @@ public class fragment_cart extends Fragment {
         dbHelper = new DatabaseHelper(getContext());
         currentUser = (User) getArguments().getSerializable("currentUser");
 
-        scroll = v.findViewById(R.id.scroll);
         toShow = v.findViewById(R.id.toShow);
         checkout = v.findViewById(R.id.checkout);
         totalcost = v.findViewById(R.id.totalcost);
