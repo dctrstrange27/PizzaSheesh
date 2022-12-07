@@ -83,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
             try{
                 Intent homeIntent = new Intent(getApplicationContext(), Home.class);
                 homeIntent.putExtra("currentUser", dummyUser);
+                ArrayList<Product> mycart = dummyUser.getCartItems(dbHelper);
+                System.out.println("I have "+mycart.size()+" these are : ");
+                for(Product p : mycart) System.out.println(p.getName()+" -> "+ p.getPrice() +" -> "+p.getTotalCost());
                 startActivity(homeIntent);
                 finish();
             }catch (Exception e){
