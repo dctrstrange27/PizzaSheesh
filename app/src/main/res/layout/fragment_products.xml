@@ -6,47 +6,23 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context=".home.fragment_home">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-        </LinearLayout>
-
-
     <ListView
+        android:layout_marginHorizontal="20dp"
+        android:dividerHeight="20dp"
         android:id="@+id/riceList"
-        android:layout_width="356dp"
-        android:layout_height="658dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:divider="@null"
-        android:dividerHeight="0dp"
-        android:paddingVertical="10dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="70dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692"
+        app:layout_constraintVertical_bias="0.571"
         tools:ignore="MissingConstraints"
         tools:listitem="@layout/product_list">
-
-
     </ListView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="76dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="All Products"
-        android:textColor="#555353"
-        app:layout_constraintBottom_toTopOf="@+id/riceList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

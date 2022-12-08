@@ -48,6 +48,8 @@ public class rice_adapter extends ArrayAdapter<Product> {
         desc.setText(rice.getDescription());
         price.setText("$"+Integer.toString((int) rice.getPrice())+".00");
         img.setImageResource(rice.getImgResId(this.getContext()));
+
+
         setBtnState(addToCart, rice);
         addToCart.setOnClickListener(e -> {
             currentUser.addToCart(rice, getContext(), dbHelper);
@@ -56,7 +58,6 @@ public class rice_adapter extends ArrayAdapter<Product> {
         });
         return c;
     }
-
     private void setBtnState(Button target, Product p) {
         if(currentUser.isPresentInCart(p.getUid(), dbHelper)){
             target.setClickable(false);

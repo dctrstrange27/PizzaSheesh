@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -18,6 +19,7 @@ import com.example.philipricedealership._models.Product;
 import com.example.philipricedealership.R;
 import com.example.philipricedealership._models.User;
 import com.example.philipricedealership._utils.DatabaseHelper;
+import com.example.philipricedealership.home.Home;
 import com.example.philipricedealership.home.fragment_cart;
 
 import java.util.ArrayList;
@@ -42,9 +44,11 @@ public class cart_adapter extends ArrayAdapter<Product> {
         TextView name = c.findViewById(R.id.item_name), price = c.findViewById(R.id.item_price), desc = c.findViewById(R.id.item_desc), quantity = c.findViewById(R.id.quantity);
         ImageButton delete = c.findViewById(R.id.delete);
 
-        increase.setOnClickListener(JohnySinsei -> {
-            ArrayList<Product> prs = currentuser.getCartItems(dbHelper);
+        increase.startAnimation(AnimationUtils.loadAnimation(c.getContext(), R.anim.anim_item));
 
+        increase.setOnClickListener(JohnySinsei -> {
+
+            ArrayList<Product> prs = currentuser.getCartItems(dbHelper);
             for (Product p : prs)
                 if (p.getUid() == rice.getUid())
                     p.setQty(p.getQty() + 1);
