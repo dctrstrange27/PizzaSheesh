@@ -37,18 +37,16 @@ public class fragment_products extends Fragment {
         d = new DatabaseHelper(v.getContext());
 
         render();
-        return  v;
+        return v;
     }
 
-    public void render(){
+    public void render() {
         ArrayList<Product> prods = Product.getAllProduct(d);
-        int totalAdded = 0;
-        for(Product prd : prods) if(currentUser.isPresentInCart(prd.getUid())) {
-            totalAdded ++;
-            prd.setAdded(true);
-        }
-        System.out.println("Mga naka add sa cart before giving to adapter -> "+totalAdded);
-        rice = new rice_adapter(v.getContext(), prods, currentUser, this);
+        ArrayList<Product> filtered = new ArrayList<>();
+        for (Product prd : prods)
+            if (!currentUser.isPresentInCart(prd.getUid()))
+                filtered.add(prd);
+        rice = new rice_adapter(v.getContext(), filtered, currentUser, this);
         riceList.setAdapter(rice);
         riceList.setSmoothScrollbarEnabled(true);
     }
