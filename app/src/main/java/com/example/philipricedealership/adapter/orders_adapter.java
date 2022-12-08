@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,17 +41,44 @@ public class orders_adapter extends ArrayAdapter<Order> {
 
     public View getView(int position, @Nullable View c, @NonNull ViewGroup parent) {
         Order order = getItem(position);
+        Order currentOrder = getItem(position);
+        ArrayList <Product> cartlist = currentOrder.getCartItems(dbHelper);
         if(c == null){
             c = LayoutInflater.from(getContext()).inflate(R.layout.order_list,parent,false);
         }
-        TextView price = c.findViewById(R.id.order_prodPrice);
+        TextView ordID = c.findViewById(R.id.order_prodPrice);
         TextView desc = c.findViewById(R.id.order_prodDesc);
-        TextView qty = c.findViewById(R.id.order_prodQty);
+        TextView total = c.findViewById(R.id.order_prodQty);
         Button cancelOrder = c.findViewById(R.id.cancelOrder);
+        Button viewOrder = c.findViewById(R.id.viewOrders);
 
-        qty.setText("Total: "+Integer.toString((int) order.getTotal()));
+        total.setText("Total: "+Integer.toString((int) order.getTotal()));
         desc.setText(order.getDate());
-        price.setText("order id: #000"+Integer.toString(order.getUid()));
+        ordID.setText("order id: #000"+Integer.toString(order.getUid()));
+
+        viewOrder.setOnClickListener(aegin ->{
+            Dialog viewOrders = new Dialog(getContext());
+            viewOrders.setContentView(R.layout.order_list_diag);
+            viewOrders.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            viewOrders.getWindow().getAttributes().windowAnimations = R.style.diagAnim;
+            viewOrders.show();
+
+            ListView view_order = viewOrders.findViewById(R.id.orderList);
+            TextView orderId = viewOrders.findViewById(R.id.order_id);
+            TextView orderDate = viewOrders.findViewById(R.id.order_date);
+            TextView ordTotal = viewOrders.findViewById(R.id.total);
+            ImageButton close = viewOrders.findViewById(R.id.close);
+            orderId.setText("order id: #000"+Integer.toString(order.getUid()));
+            orderDate.setText("date: "+order.getDate());
+            ordTotal.setText("Total:₱ "+Integer.toString((int) order.getTotal()));
+            ordered_adapter orders = new ordered_adapter(getContext(),cartlist, currentUser,null);
+            view_order.setAdapter(orders);
+            close.setOnClickListener(e -> {
+                viewOrders.dismiss();
+            });
+
+        });
+
 
         cancelOrder.setOnClickListener(JohnySinsei -> {
             Dialog checkout_dialog = new Dialog(getContext());
