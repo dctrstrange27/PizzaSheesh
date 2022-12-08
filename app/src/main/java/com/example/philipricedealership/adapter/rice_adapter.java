@@ -52,7 +52,8 @@ public class rice_adapter extends ArrayAdapter<Product> {
 
 
 
-        setBtnState(addToCart, rice);
+
+
 
         if(rice.isAdded()){
             addToCart.setClickable(false);
@@ -65,14 +66,6 @@ public class rice_adapter extends ArrayAdapter<Product> {
             currentUser.fetchSelf(dbHelper);
         });
         return c;
-    }
-
-    private void setBtnState(Button target, Product p) {
-        if(currentUser.isPresentInCart(p.getUid())){
-            target.setClickable(false);
-            target.setText("Added");
-            target.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.disabled));
-        }
     }
 
 }

@@ -45,6 +45,5 @@ public class fragment_products extends Fragment {
         for(Product prd : prods) if(currentUser.isPresentInCart(prd.getUid())) prd.setAdded(true);
         rice = new rice_adapter(v.getContext(), prods, currentUser, this);
         riceList.setAdapter(rice);
-        riceList.setSmoothScrollbarEnabled(true);
     }
 }
