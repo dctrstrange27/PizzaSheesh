@@ -42,7 +42,12 @@ public class fragment_products extends Fragment {
 
     public void render(){
         ArrayList<Product> prods = Product.getAllProduct(d);
-        for(Product prd : prods) if(currentUser.isPresentInCart(prd.getUid())) prd.setAdded(true);
+        int totalAdded = 0;
+        for(Product prd : prods) if(currentUser.isPresentInCart(prd.getUid())) {
+            totalAdded ++;
+            prd.setAdded(true);
+        }
+        System.out.println("Mga naka add sa cart before giving to adapter -> "+totalAdded);
         rice = new rice_adapter(v.getContext(), prods, currentUser, this);
         riceList.setAdapter(rice);
         riceList.setSmoothScrollbarEnabled(true);

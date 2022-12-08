@@ -71,7 +71,6 @@ public class Home extends AppCompatActivity {
             currentUser.fetchSelf(dbHelper);
             bundolf.putSerializable("currentUser", currentUser);
         }catch (Exception e){
-            System.out.println("Fire ERR " + e);
             bundolf = new Bundle();
             bundolf.putSerializable("currentUser", currentUser);
         }

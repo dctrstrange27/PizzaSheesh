@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,18 +48,17 @@ public class rice_adapter extends ArrayAdapter<Product> {
 
         name.setText(rice.getName());
         desc.setText(rice.getDescription());
-        price.setText("$"+Integer.toString((int) rice.getPrice())+".00");
+        price.setText(String.format("₱ %.2f", rice.getPrice()));
         img.setImageResource(rice.getImgResId(this.getContext()));
 
-        if(rice.isAdded()){
-            addToCart.setClickable(false);
-            addToCart.setText("Added");
-            addToCart.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.disabled));
-        }
-
         addToCart.setOnClickListener(e -> {
+            if(rice.isAdded()){
+                Toast.makeText(getContext(), "This product is already on your cart!", Toast.LENGTH_LONG).show();
+                return;
+            }
             currentUser.addToCart(rice, getContext(), dbHelper);
             currentUser.fetchSelf(dbHelper);
+            rootParent.render();
         });
         return c;
     }
