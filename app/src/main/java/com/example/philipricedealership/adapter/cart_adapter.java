@@ -50,12 +50,13 @@ public class cart_adapter extends ArrayAdapter<Product> {
 
             ArrayList<Product> prs = currentuser.getCartItems(dbHelper);
             for (Product p : prs)
-                if (p.getUid() == rice.getUid())
+                if (p.getUid() == rice.getUid()) {
                     p.setQty(p.getQty() + 1);
+                    quantity.setText(p.getQty()+"x");
+                }
 
             currentuser.setCart(currentuser.cartStringifyer(prs));
             currentuser.saveState(getContext(), dbHelper, false);
-            rootParent.rerender();
         });
 
         decrease.setOnClickListener(JohnySinsei -> {
@@ -68,11 +69,11 @@ public class cart_adapter extends ArrayAdapter<Product> {
                         continue;
                     }
                     p.setQty(p.getQty() - 1);
+                    quantity.setText(p.getQty()+"x");
                 }
 
             currentuser.setCart(currentuser.cartStringifyer(prs));
             currentuser.saveState(getContext(), dbHelper, false);
-            rootParent.rerender();
         });
 
         delete.setOnClickListener(e -> {
