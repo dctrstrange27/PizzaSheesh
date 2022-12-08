@@ -49,11 +49,13 @@ public class rice_adapter extends ArrayAdapter<Product> {
         desc.setText(rice.getDescription());
         price.setText("$"+Integer.toString((int) rice.getPrice())+".00");
         img.setImageResource(rice.getImgResId(this.getContext()));
+
         if(rice.isAdded()){
             addToCart.setClickable(false);
             addToCart.setText("Added");
             addToCart.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.disabled));
         }
+
         addToCart.setOnClickListener(e -> {
             currentUser.addToCart(rice, getContext(), dbHelper);
             currentUser.fetchSelf(dbHelper);

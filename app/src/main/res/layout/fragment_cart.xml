@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
     tools:context=".home.fragment_home">
     <TextView
         android:id="@+id/toShow"
@@ -17,12 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <ListView
+        android:scrollbars="none"
         android:id="@+id/itemList"
         android:layout_width="385dp"
         android:layout_height="529dp"
         android:layout_marginTop="44dp"
         android:divider="@null"
-        android:dividerHeight="0dp"
+        android:dividerHeight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"

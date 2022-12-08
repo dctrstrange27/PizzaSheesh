@@ -3,6 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:background="@drawable/prod_box"
+    android:layout_marginVertical="15dp"
+    android:paddingHorizontal="20dp"
     >
     <ImageView
         android:id="@+id/pic"
