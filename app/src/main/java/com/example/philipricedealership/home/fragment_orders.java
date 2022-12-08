@@ -21,21 +21,27 @@ import java.util.ArrayList;
 
 
 public class fragment_orders extends Fragment {
+    User currentUser;
+    DatabaseHelper dbHelper;
+    ListView order;
+    View v;
+    orders_adapter orders;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_orders, container, false);
-        User currentUser = (User) getArguments().getSerializable("currentUser");
-        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
-        ArrayList<Order> ords = Order.getAllOrderFrom(currentUser.getUid(), dbHelper);
-        for(Order o : ords) System.out.println("My Orders -> "+o.toString());
-        orders_adapter orders;
-        ListView order;
+        v = inflater.inflate(R.layout.fragment_orders, container, false);
+        currentUser = (User) getArguments().getSerializable("currentUser");
+        dbHelper = new DatabaseHelper(getContext());
         order = v.findViewById(R.id.orderList);
-        orders = new orders_adapter(v.getContext(),  ords, currentUser);
-        order.setAdapter(orders);
-
+        rerender();
       return  v;
+    }
+
+    public void rerender(){
+        ArrayList<Order> ords = Order.getAllOrderFrom(currentUser.getUid(), dbHelper);
+        orders = new orders_adapter(v.getContext(),  ords, currentUser, this);
+        order.setAdapter(orders);
     }
 }

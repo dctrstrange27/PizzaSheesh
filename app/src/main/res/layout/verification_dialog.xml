@@ -102,7 +102,7 @@
     </LinearLayout>
     <Button
         android:layout_gravity="bottom"
-        android:id="@+id/ok"
+        android:id="@+id/no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
