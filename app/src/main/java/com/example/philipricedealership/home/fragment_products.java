@@ -12,27 +12,39 @@ import android.widget.ListView;
 
 import com.example.philipricedealership.R;
 
+import com.example.philipricedealership._models.Order;
 import com.example.philipricedealership._models.Product;
 import com.example.philipricedealership._models.User;
 import com.example.philipricedealership._utils.DatabaseHelper;
 import com.example.philipricedealership.adapter.rice_adapter;
 
+import java.util.ArrayList;
+
 public class fragment_products extends Fragment {
     ListView riceList;
-    static rice_adapter rice;
+    rice_adapter rice;
+    DatabaseHelper d;
+    View v;
+    User currentUser;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_products, container, false);
+        v = inflater.inflate(R.layout.fragment_products, container, false);
         riceList = v.findViewById(R.id.riceList);
-        User currentUser = (User) getArguments().getSerializable("currentUser");
-        DatabaseHelper d = new DatabaseHelper(v.getContext());
-        Product.getAllProduct(d);
-        rice = new rice_adapter(v.getContext(), Product.getAllProduct(d), currentUser);
+        currentUser = (User) getArguments().getSerializable("currentUser");
+        d = new DatabaseHelper(v.getContext());
+
+        render();
+        return  v;
+    }
+
+    public void render(){
+        ArrayList<Product> prods = Product.getAllProduct(d);
+        for(Product prd : prods) if(currentUser.isPresentInCart(prd.getUid())) prd.setAdded(true);
+        rice = new rice_adapter(v.getContext(), prods, currentUser, this);
         riceList.setAdapter(rice);
         riceList.setSmoothScrollbarEnabled(true);
-        System.out.println("Products: "+Product.getAllProduct(d));
-        return  v;
     }
 }

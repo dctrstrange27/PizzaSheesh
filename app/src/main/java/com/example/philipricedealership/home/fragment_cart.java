@@ -21,7 +21,6 @@ import android.widget.TextView;
 
 
 import com.example.philipricedealership.R;
-import com.example.philipricedealership._models.Order;
 import com.example.philipricedealership._models.Product;
 import com.example.philipricedealership._models.User;
 import com.example.philipricedealership._utils.DatabaseHelper;
@@ -65,7 +64,7 @@ public class fragment_cart extends Fragment {
             dialogClose.setOnClickListener(JohnySinsei2 -> {
                 checkout_dialog.dismiss();
             });
-            Button ok = checkout_dialog.findViewById(R.id.ok);
+            Button ok = checkout_dialog.findViewById(R.id.no);
             ok.setOnClickListener(JohnySinsei2 -> {
                 checkout_dialog.dismiss();
             });

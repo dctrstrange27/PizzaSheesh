@@ -161,6 +161,11 @@ public class Order implements Serializable {
         return alls;
     }
 
+    public void destroySelf(Context context, DatabaseHelper dbHelper){
+        dbHelper.delete("uid="+getUid(), "orders");
+        Toast.makeText(context, "Order Canceled 😢", Toast.LENGTH_LONG).show();
+    }
+
     @Override
     public String toString() {
         return "Order{" +

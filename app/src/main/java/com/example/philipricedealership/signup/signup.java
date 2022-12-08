@@ -87,7 +87,7 @@ public class signup extends AppCompatActivity {
         verify.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
        verify.getWindow().getAttributes().windowAnimations = R.style.diagAnim;
         code =  verify.findViewById(R.id.code);
-        verifyCode = verify.findViewById(R.id.ok);
+        verifyCode = verify.findViewById(R.id.no);
         emailName = verify.findViewById(R.id.clickEmail);
         emailName.setText(email.getText().toString());
         closeVeriDialog = verify.findViewById(R.id.closeV);

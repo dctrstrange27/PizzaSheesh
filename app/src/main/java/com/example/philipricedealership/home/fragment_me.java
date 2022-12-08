@@ -28,11 +28,11 @@ import com.example.philipricedealership._utils.Helper;
 
 import java.io.File;
 import java.util.Date;
-
+import com.example.philipricedealership.signup.*;
 
 public class fragment_me extends Fragment {
     private User currentUser;
-    private TextView staticemail, staticusername;
+    private TextView staticemail, staticusername, sw, logout;
     private EditText usernameeditable, passwordeditable, passwordconfirmeditable, address;
     private ImageView cover;
 
@@ -52,6 +52,26 @@ public class fragment_me extends Fragment {
         usernameeditable = v.findViewById(R.id.usernameeditable);
         passwordeditable = v.findViewById(R.id.passwordeditable);
         passwordconfirmeditable = v.findViewById(R.id.passwordconfirmeditable);
+
+        sw = v.findViewById(R.id.sw);
+        sw.setOnClickListener(JohnySinsei -> {
+            currentUser.setState(0);
+            currentUser.saveState(getContext(), dbHelper, false);
+            Intent signup = new Intent(getContext(), signup.class);
+            startActivity(signup);
+            getActivity().finish();
+        });
+
+        logout = v.findViewById(R.id.logout);
+
+        logout.setOnClickListener(JohnySinsei -> {
+            currentUser.setState(0);
+            currentUser.saveState(getContext(), dbHelper, false);
+            Intent login = new Intent(getContext(), login.class);
+            startActivity(login);
+            getActivity().finish();
+        });
+
         address = v.findViewById(R.id.address);
         cover = v.findViewById(R.id.cover);
         savebtn = v.findViewById(R.id.savebtn);

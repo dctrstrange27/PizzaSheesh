@@ -33,9 +33,25 @@ public class User implements Serializable {
         return items;
     }
 
-    public boolean isPresentInCart(int uid, DatabaseHelper dbHelper) {
-        ArrayList<Product> cartItems = getCartItems(dbHelper);
-        for (Product pr : cartItems) if (pr.getUid() == uid) return true;
+    public ArrayList<Product> getUnfetchedCartItems() {
+        ArrayList<Product> items = new ArrayList<>();
+        if (cart.length() == 0) return items;
+        String[] porducts = cart.split("<~>");
+        for (int x = 0; x < porducts.length; x++) {
+            String[] sparse = porducts[x].split("\\+");
+            if (sparse[0].length() == 0) continue;
+            Product pr = new Product(Integer.parseInt(sparse[0]), Integer.parseInt(sparse[1]));
+            items.add(pr);
+        }
+        return items;
+    }
+
+    public boolean isPresentInCart(int uid) {
+        ArrayList<Product> cartItems = getUnfetchedCartItems();
+        for (Product pr : cartItems) if (pr.getUid() == uid){
+            System.out.println("P -> "+uid+" -> "+pr.toString());
+            return true;
+        }
         return false;
     }
 

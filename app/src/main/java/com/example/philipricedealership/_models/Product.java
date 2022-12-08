@@ -15,6 +15,16 @@ public class Product implements Serializable {
     private String name, imgUrl, description;
     private double price;
 
+    private boolean added = false;
+
+    public boolean isAdded() {
+        return added;
+    }
+
+    public void setAdded(boolean added) {
+        this.added = added;
+    }
+
     public Double getTotalCost () { return qty * price; }
 
     public Product(int uid, int qty) {

@@ -64,5 +64,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long result = db.update(table, values, condition , null);
         return result != -1 ;
     }
-
+    public boolean delete(String condition, String table){
+        SQLiteDatabase db = getWritableDatabase();
+        long result = db.delete(table, condition, null);
+        return result != -1 ;
+    }
 }
