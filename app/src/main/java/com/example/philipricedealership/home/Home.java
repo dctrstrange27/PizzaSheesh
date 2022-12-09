@@ -14,11 +14,15 @@ import com.example.philipricedealership.R;
 import com.example.philipricedealership._models.User;
 import com.example.philipricedealership._utils.DatabaseHelper;
 
+import java.util.Stack;
+
 public class Home extends AppCompatActivity {
-    private ImageView home,products,orders,cart,Me;
+    private ImageView home,products,orders,cart,Me, back;
     private User currentUser;
     private DatabaseHelper dbHelper;
     private TextView myname,fragLabel;
+    private Stack <Integer> history = new Stack<>();
+    private int backCount = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +34,16 @@ public class Home extends AppCompatActivity {
         orders = findViewById(R.id.ordersIcon);
         cart = findViewById(R.id.cartIcons);
         Me = findViewById(R.id.meIcons);
+        back = findViewById(R.id.back);
+        back.setOnClickListener(johnysinsei->{
+            back();
+        });
         currentUser = (User) getIntent().getSerializableExtra("currentUser");
 
 //        myname.setText(currentUser.getUsername());
         routes();
     }
+
     public void routes(){
         route(0, null);
         fragLabel.setText("Home");
@@ -65,6 +74,7 @@ public class Home extends AppCompatActivity {
         });
 
     }
+
     public void route(int r, Bundle bundolf){
         try {
             if(bundolf.containsKey("currentUser")) bundolf.remove("currentUser");
@@ -79,6 +89,26 @@ public class Home extends AppCompatActivity {
         if(r == 2) getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainer, fragment_orders.class, bundolf).commit();
         if(r == 3) getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainer, fragment_cart.class, bundolf).commit();
         if(r == 4) getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainer, fragment_me.class, bundolf).commit();
+        history.push(r);
+    }
+
+    public void back(){
+        if(backCount == 0){
+            finish();
+            System.exit(0);
+        }
+
+        if(history.size() == 1) {
+            backCount--;
+            Toast.makeText(getApplicationContext(), "back again to exit", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(history.size() >= 2){
+            history.pop();
+        }
+
+        route(history.pop(), null);
     }
 
     @Override
