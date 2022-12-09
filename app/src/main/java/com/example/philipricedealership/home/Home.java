@@ -35,12 +35,11 @@ public class Home extends AppCompatActivity {
         cart = findViewById(R.id.cartIcons);
         Me = findViewById(R.id.meIcons);
         back = findViewById(R.id.back);
+
         back.setOnClickListener(johnysinsei->{
             back();
         });
         currentUser = (User) getIntent().getSerializableExtra("currentUser");
-
-//        myname.setText(currentUser.getUsername());
         routes();
     }
 
@@ -75,6 +74,7 @@ public class Home extends AppCompatActivity {
 
     }
 
+
     public void route(int r, Bundle bundolf){
         try {
             if(bundolf.containsKey("currentUser")) bundolf.remove("currentUser");
@@ -89,6 +89,7 @@ public class Home extends AppCompatActivity {
         if(r == 2) getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainer, fragment_orders.class, bundolf).commit();
         if(r == 3) getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainer, fragment_cart.class, bundolf).commit();
         if(r == 4) getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).replace(R.id.fragmentContainer, fragment_me.class, bundolf).commit();
+
         history.push(r);
     }
 
@@ -109,6 +110,7 @@ public class Home extends AppCompatActivity {
         }
 
         route(history.pop(), null);
+
     }
 
     @Override
