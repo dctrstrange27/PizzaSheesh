@@ -37,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 {"Pizza Sheezy Mushroom", "pizza_sheezy_mushroom", "Leveled up with cheesy pizza with roasted mushrooms and tasty tomatoes available in 12\" and 15\" size"},
                 {"Pizza Sheezy Octopus", "pizza_sheezy_mini_octo", "No pork pizza! An appetizing combination of delicious mini octopus, cheese and creamy shrimps available in 12\" and 15\" size"},
                 {"Pizza Sheezy Veggies", "pizza_sheezy_veggies", "Cheesy pizza with veggies overload and more available in 12\" and 15\" size"},
-                {"Sheezy Lasagna", "pizza_sheezy_lasagna", "Our best pasta made with loaded layers of beef and generous amount of cheese on top available in small, medium and large pan"}
+                {"Sheezy Lasagna", "pizza_sheezy_lasagna", "Our best pasta made with loaded layers of beef and generous amount of cheese on top available in small, medium and large pan"},
+                {"Deep fried sliced potatoes", "pizz_sheezy_deep_fried", "Deep fried sliced potatoes"}
         };
         double prices[] = {
-                350, 450, 480, 300, 450
+                350, 450, 480, 300, 450, 250
         };
 
         for (int x = 0; x < vals.length; x++){

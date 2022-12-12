@@ -2680,6 +2680,7 @@ int drawable orders 0x7f08010b
 int drawable password 0x7f08010c
 int drawable person 0x7f08010d
 int drawable person_signup 0x7f08010e
+int drawable pizz_sheezy_deep_fried 0x7f080132
 int drawable pizza 0x7f08010f
 int drawable pizza_product 0x7f080110
 int drawable pizza_sheezy_lasagna 0x7f080131

@@ -2681,6 +2681,7 @@ drawable orders
 drawable password
 drawable person
 drawable person_signup
+drawable pizz_sheezy_deep_fried
 drawable pizza
 drawable pizza_product
 drawable pizza_sheezy_lasagna

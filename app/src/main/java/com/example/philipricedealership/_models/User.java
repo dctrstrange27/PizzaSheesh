@@ -259,7 +259,6 @@ public class User implements Serializable {
             this.setPassword(findUser.getString(5));
             this.setAddress(findUser.getString(6));
             this.setCart(findUser.getString(7));
-            System.out.println("INITSED ");
         } catch (Exception e) {
             System.out.println("ERR ON FETCH " + e);
         }

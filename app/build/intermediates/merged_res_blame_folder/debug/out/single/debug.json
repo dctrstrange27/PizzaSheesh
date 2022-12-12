@@ -8,12 +8,12 @@
         "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/drawable/login.png"
     },
     {
-        "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/font_poppins_medium.xml.flat",
-        "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/font/poppins_medium.xml"
-    },
-    {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/drawable_prod_hasmine25.jpg.flat",
         "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/drawable/prod_hasmine25.jpg"
+    },
+    {
+        "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/font_poppins_medium.xml.flat",
+        "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/font/poppins_medium.xml"
     },
     {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/drawable_prod_rapido50.jpg.flat",
@@ -76,6 +76,10 @@
         "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/drawable/arrow_left_svgrepo_com.xml"
     },
     {
+        "merged": "com.example.philipricedealership.app-merged_res-30:/drawable_pizz_sheezy_deep_fried.png.flat",
+        "source": "com.example.philipricedealership.app-debug-31:/drawable/pizz_sheezy_deep_fried.png"
+    },
+    {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/drawable_checkout.png.flat",
         "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/drawable/checkout.png"
     },
@@ -112,12 +116,12 @@
         "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/drawable/prod_jasmine5.jpg"
     },
     {
-        "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/drawable_left.xml.flat",
-        "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/drawable/left.xml"
-    },
-    {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/anim_anim_item.xml.flat",
         "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/anim/anim_item.xml"
+    },
+    {
+        "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/drawable_left.xml.flat",
+        "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/drawable/left.xml"
     },
     {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/layout_order_list_diag.xml.flat",
@@ -142,10 +146,6 @@
     {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-debug-31:/mipmap-xhdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "com.example.philipricedealership.app-merged_res-30:/drawable_pizza_sheezy_lasagna.png.flat",
-        "source": "com.example.philipricedealership.app-debug-31:/drawable/pizza_sheezy_lasagna.png"
     },
     {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/drawable_nav_bg.xml.flat",
@@ -242,6 +242,10 @@
     {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/layout_fragment_orders.xml.flat",
         "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-main-32:/layout/fragment_orders.xml"
+    },
+    {
+        "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/drawable_pizza_sheezy_lasagna.png.flat",
+        "source": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-debug-31:/drawable/pizza_sheezy_lasagna.png"
     },
     {
         "merged": "/home/jerbee/.gradle/daemon/7.4/com.example.philipricedealership.app-merged_res-30:/drawable_pizza_sheezy_veggies.png.flat",
