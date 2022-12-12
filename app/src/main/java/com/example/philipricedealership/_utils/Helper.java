@@ -20,7 +20,7 @@ import java.util.Locale;
 import java.util.Random;
 import java.util.TimeZone;
 public class Helper {
-    final static String EMAIL = "philipricedealer79@gmail.com", PASS = "ufskkjueljbcmxix";
+    final static String EMAIL = "pizzasheeshph@gmail.com", PASS = "akmfayzcpbwvnduw";
     public static String hashPassword(String toHash) {
         String hashed = BCrypt.hashpw(toHash, BCrypt.gensalt());
         return hashed;

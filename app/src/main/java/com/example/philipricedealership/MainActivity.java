@@ -33,35 +33,20 @@ public class MainActivity extends AppCompatActivity {
         dbHelper.checkTableExist();
 
         String vals[][] = {
-                {"Buko Pandan", "prod_bukopandan25", "25kg, mabango, malambot, local"},
-                {"Buko Pandan", "prod_bukopandan5", "5kg, mabango, malambot, local"},
-                {"Buko Pandan", "prod_bukopandan50", "50kg, mabango, malambot, local, "},
-                {"Coco Pandan", "prod_cocopandan25", "25kg, whole grain, imported, mabango"},
-                {"Dinurado Mindoro", "prod_dinuradomindoro25", "25kg, malambot"},
-                {"Hasmine", "prod_hasmine25", "25kg, whole grain, imported, walang amoy"},
-                {"Jasmine", "prod_jasmine5", "5kg"},
-                {"Jasmine Sweet Rice", "prod_jasminsweetrice25", "25kg, whole grain, imported, walang amoy"},
-                {"Mekeni Rice", "prod_mekenirice25", "25kg, medyo maalsa, malambot, local"},
-                {"Pandan Gold", "prod_pandangold25", "25kg, malambot, commercial, local"},
-                {"Pandan Gold", "prod_pandangold5", "5kg, whole grain, imported, malambot"},
-                {"Princess Hasmine", "prod_princesshasmine50", "50kg"},
-                {"Rapido", "prod_rapido50", "50kg, imported, maalsa"},
-                {"Sakura", "prod_sakura25", "25kg, local, malambot"},
-                {"Sakura", "prod_sakura5", "5kg"},
-                {"Tanglad Rice", "prod_tangladrice25", "25kg, malambot"},
-                {"Tween Dragon", "prod_tweendragon50", "50kg"},
-                {"Victoria", "prod_victoria25", "25kg"}
+                {"Pizza Sheezy Pepperoni", "pizza_sheezy_pepperoni", "Our cheesy flavor loaded favorite pepperoni pushed to the extreme. Available in 12\" and 15\" size"},
+                {"Pizza Sheezy Mushroom", "pizza_sheezy_mushroom", "Leveled up with cheesy pizza with roasted mushrooms and tasty tomatoes available in 12\" and 15\" size"},
+                {"Pizza Sheezy Octopus", "pizza_sheezy_mini_octo", "No pork pizza! An appetizing combination of delicious mini octopus, cheese and creamy shrimps available in 12\" and 15\" size"},
+                {"Pizza Sheezy Veggies", "pizza_sheezy_veggies", "Cheesy pizza with veggies overload and more available in 12\" and 15\" size"},
+                {"Sheezy Lasagna", "pizza_sheezy_lasagna", "Our best pasta made with loaded layers of beef and generous amount of cheese on top available in small, medium and large pan"}
         };
         double prices[] = {
-                950, 210, 1880, 1060, 1100,
-                1000, 235, 1000, 900, 860,
-                235, 2000, 1740, 870, 265, 930,
-                1880, 880
+                350, 450, 480, 300, 450
         };
 
         for (int x = 0; x < vals.length; x++){
             Product prd = new Product(vals[x][0], vals[x][1], vals[x][2], prices[x]);
             prd.saveState(getApplicationContext(), dbHelper, true);
+            System.out.println("Product : "+prd.getName()+" isValid Image -> "+(prd.getImgResId(getApplicationContext()) == 0 ? "Invalid" : "Valid"));
         }
 
         login_btn.setOnClickListener(johny -> {

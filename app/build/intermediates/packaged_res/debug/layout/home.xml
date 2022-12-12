@@ -61,7 +61,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="10dp"
-        android:background="@drawable/nav_bg"
         android:gravity="center"
         android:padding="10dp">
         <LinearLayout
@@ -90,7 +89,7 @@
                 android:paddingHorizontal="15dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="1dp"
-                android:src="@drawable/products" />
+                android:src="@drawable/pizza_product" />
 
             <TextView
                 android:layout_width="15dp"

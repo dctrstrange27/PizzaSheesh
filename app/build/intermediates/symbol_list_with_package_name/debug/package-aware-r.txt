@@ -2613,6 +2613,7 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable main_bg
 drawable man
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
@@ -2675,10 +2676,18 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable order_now
 drawable orders
 drawable password
 drawable person
 drawable person_signup
+drawable pizza
+drawable pizza_product
+drawable pizza_sheezy_lasagna
+drawable pizza_sheezy_mini_octo
+drawable pizza_sheezy_mushroom
+drawable pizza_sheezy_pepperoni
+drawable pizza_sheezy_veggies
 drawable prod_box
 drawable prod_bukopandan25
 drawable prod_bukopandan5
@@ -2702,13 +2711,16 @@ drawable products
 drawable quantity_box
 drawable sapiens
 drawable sign_box
+drawable signup_bg
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable verifying
+font fredoka_one
 font nunito_sans_semibold
 font pacifico
 font poppins_bold
+font poppins_light
 font poppins_medium
 id ALT
 id BOTTOM_END
@@ -3234,6 +3246,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toProducts
 id toShow
 id toggle
 id top
@@ -4738,6 +4751,7 @@ style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style checkout_button
 style diagAnim
+style order_button
 style primary_button
 style viewItem
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle

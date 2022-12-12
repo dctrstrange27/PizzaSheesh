@@ -15,17 +15,19 @@
         </item>
     </string-array>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/fredoka_one</item>
         <item>@font/nunito_sans_semibold</item>
         <item>@font/pacifico</item>
         <item>@font/poppins_bold</item>
+        <item>@font/poppins_light</item>
         <item>@font/poppins_medium</item>
     </array>
     <color name="black">#FF000000</color>
     <color name="disabled">#C7C7C7</color>
-    <color name="primary_color">#527C70</color>
+    <color name="primary_color">#f96b3f</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_700">#000E0E0E</color>
-    <color name="second_primary">#111111</color>
+    <color name="second_primary">#554B63</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="third_primary">#686565</color>
@@ -47,7 +49,6 @@
         
     </style>
     <style name="checkout_button">
-
         <item name="backgroundTint">@color/black</item>
         <item name="cornerRadius">10dp</item>
     </style>
@@ -55,9 +56,13 @@
         <item name="android:windowEnterAnimation">@anim/zoom_in</item>
         <item name="android:windowExitAnimation">@anim/zoom_out</item>
     </style>
+    <style name="order_button">
+
+        <item name="cornerRadius">10dp</item>
+    </style>
     <style name="primary_button">
         <item name="backgroundTint">@color/primary_color</item>
-        <item name="cornerRadius">20dp</item>
+        <item name="cornerRadius">10dp</item>
     </style>
     <style name="viewItem">
 

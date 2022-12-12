@@ -6,128 +6,128 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="28"
-8-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml
+8-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml
+9-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:5:5-67
-11-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:5:22-64
+11-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:5:22-64
 12
 13    <application
-13-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:7:5-55:19
+13-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:7:5-55:19
 14        android:allowBackup="true"
-14-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:8:9-35
+14-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:8:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-15-->[androidx.core:core:1.8.0] /home/rohan/.gradle/caches/transforms-3/87a796fe63836d99a2198ac6a6284cb3/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+15-->[androidx.core:core:1.8.0] /home/jerbee/.gradle/caches/transforms-3/87a796fe63836d99a2198ac6a6284cb3/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 16        android:dataExtractionRules="@xml/data_extraction_rules"
-16-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:9:9-65
+16-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:9:9-65
 17        android:debuggable="true"
 18        android:extractNativeLibs="false"
 19        android:fullBackupContent="@xml/backup_rules"
-19-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:10:9-54
+19-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:10:9-54
 20        android:icon="@mipmap/ic_launcher"
-20-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:11:9-43
+20-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:11:9-43
 21        android:label="@string/app_name"
-21-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:12:9-41
+21-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:12:9-41
 22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:13:9-54
+22-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:13:9-54
 23        android:supportsRtl="true"
-23-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:14:9-35
+23-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:14:9-35
 24        android:testOnly="true"
 25        android:theme="@style/Theme.PhilipRiceDealership" >
-25-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:15:9-58
+25-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:15:9-58
 26        <activity
-26-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:17:9-23:20
+26-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:17:9-23:20
 27            android:name="com.example.philipricedealership.home.Home"
-27-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:18:13-38
+27-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:18:13-38
 28            android:exported="false" >
-28-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:19:13-37
+28-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:19:13-37
 29            <meta-data
-29-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:20:13-22:36
+29-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:20:13-22:36
 30                android:name="android.app.lib_name"
-30-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:21:17-52
+30-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:21:17-52
 31                android:value="" />
-31-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:22:17-33
+31-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:22:17-33
 32        </activity>
 33        <activity
-33-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:24:9-30:20
+33-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:24:9-30:20
 34            android:name="com.example.philipricedealership.signup.signup"
-34-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:25:13-42
+34-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:25:13-42
 35            android:exported="false" >
-35-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:26:13-37
+35-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:26:13-37
 36            <meta-data
-36-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:20:13-22:36
+36-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:20:13-22:36
 37                android:name="android.app.lib_name"
-37-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:21:17-52
+37-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:21:17-52
 38                android:value="" />
-38-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:22:17-33
+38-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:22:17-33
 39        </activity>
 40        <activity
-40-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:31:9-37:20
+40-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:31:9-37:20
 41            android:name="com.example.philipricedealership.signup.login"
-41-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:32:13-41
+41-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:32:13-41
 42            android:exported="false" >
-42-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:33:13-37
+42-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:33:13-37
 43            <meta-data
-43-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:20:13-22:36
+43-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:20:13-22:36
 44                android:name="android.app.lib_name"
-44-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:21:17-52
+44-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:21:17-52
 45                android:value="" />
-45-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:22:17-33
+45-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:22:17-33
 46        </activity>
 47        <activity
-47-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:38:9-50:20
+47-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:38:9-50:20
 48            android:name="com.example.philipricedealership.MainActivity"
-48-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:39:13-41
+48-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:39:13-41
 49            android:exported="true" >
-49-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:40:13-36
+49-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:40:13-36
 50            <intent-filter>
-50-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:41:13-45:29
+50-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:41:13-45:29
 51                <action android:name="android.intent.action.MAIN" />
-51-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:42:17-69
-51-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:42:25-66
+51-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:42:17-69
+51-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:42:25-66
 52
 53                <category android:name="android.intent.category.LAUNCHER" />
-53-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:44:17-77
-53-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:44:27-74
+53-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:44:17-77
+53-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:44:27-74
 54            </intent-filter>
 55
 56            <meta-data
-56-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:20:13-22:36
+56-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:20:13-22:36
 57                android:name="android.app.lib_name"
-57-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:21:17-52
+57-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:21:17-52
 58                android:value="" />
-58-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:22:17-33
+58-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:22:17-33
 59        </activity>
 60
 61        <meta-data
-61-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:52:9-54:57
+61-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:52:9-54:57
 62            android:name="preloaded_fonts"
-62-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:53:13-43
+62-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:53:13-43
 63            android:resource="@array/preloaded_fonts" />
-63-->/home/rohan/Desktop/PizzaSheesh/app/src/main/AndroidManifest.xml:54:13-54
+63-->/home/jerbee/AndroidStudioProjects/PizzaSheesh/app/src/main/AndroidManifest.xml:54:13-54
 64
 65        <provider
-65-->[androidx.emoji2:emoji2:1.2.0] /home/rohan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+65-->[androidx.emoji2:emoji2:1.2.0] /home/jerbee/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 66            android:name="androidx.startup.InitializationProvider"
-66-->[androidx.emoji2:emoji2:1.2.0] /home/rohan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+66-->[androidx.emoji2:emoji2:1.2.0] /home/jerbee/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
 67            android:authorities="com.example.philipricedealership.androidx-startup"
-67-->[androidx.emoji2:emoji2:1.2.0] /home/rohan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+67-->[androidx.emoji2:emoji2:1.2.0] /home/jerbee/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
 68            android:exported="false" >
-68-->[androidx.emoji2:emoji2:1.2.0] /home/rohan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+68-->[androidx.emoji2:emoji2:1.2.0] /home/jerbee/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
 69            <meta-data
-69-->[androidx.emoji2:emoji2:1.2.0] /home/rohan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+69-->[androidx.emoji2:emoji2:1.2.0] /home/jerbee/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
 70                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-70-->[androidx.emoji2:emoji2:1.2.0] /home/rohan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+70-->[androidx.emoji2:emoji2:1.2.0] /home/jerbee/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
 71                android:value="androidx.startup" />
-71-->[androidx.emoji2:emoji2:1.2.0] /home/rohan/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+71-->[androidx.emoji2:emoji2:1.2.0] /home/jerbee/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
 72            <meta-data
-72-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/rohan/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+72-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/jerbee/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
 73                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-73-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/rohan/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+73-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/jerbee/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
 74                android:value="androidx.startup" />
-74-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/rohan/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+74-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/jerbee/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
 75        </provider>
 76    </application>
 77
