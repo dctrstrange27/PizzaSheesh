@@ -1,2 +1,0 @@
-# PizzaSheesh
-android project
