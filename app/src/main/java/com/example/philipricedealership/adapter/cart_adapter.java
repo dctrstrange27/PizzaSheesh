@@ -57,6 +57,7 @@ public class cart_adapter extends ArrayAdapter<Product> {
 
             currentuser.setCart(currentuser.cartStringifyer(prs));
             currentuser.saveState(getContext(), dbHelper, false);
+            rootParent.recount();
         });
 
         decrease.setOnClickListener(JohnySinsei -> {
@@ -74,6 +75,7 @@ public class cart_adapter extends ArrayAdapter<Product> {
 
             currentuser.setCart(currentuser.cartStringifyer(prs));
             currentuser.saveState(getContext(), dbHelper, false);
+            rootParent.recount();
         });
 
         delete.setOnClickListener(e -> {

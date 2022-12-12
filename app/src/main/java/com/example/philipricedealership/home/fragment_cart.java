@@ -76,13 +76,8 @@ public class fragment_cart extends Fragment {
         return v;
     }
 
-    public void rerender(){
-        System.out.println("Rerendered");
-        currentUser.fetchSelf(dbHelper);
-        Product.getAllProduct(d);
+    public void recount(){
         ArrayList<Product> userItems = currentUser.getCartItems(d);
-        cart = new cart_adapter( getContext(), userItems, currentUser, this);
-        item.setAdapter(cart);
 
         double totalCost = 0;
         int totalQty = 0;
@@ -103,14 +98,25 @@ public class fragment_cart extends Fragment {
             checkout.setClickable(true);
             checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.black));
         }
-        toShow.setVisibility(View.GONE);
-        item.setVisibility(View.GONE);
 
         if(totalQty == 0){
             toShow.setVisibility(View.VISIBLE);
         }else{
             item.setVisibility(View.VISIBLE);
         }
+    }
 
+    public void rerender(){
+        System.out.println("Rerendered");
+        currentUser.fetchSelf(dbHelper);
+        Product.getAllProduct(d);
+        ArrayList<Product> userItems = currentUser.getCartItems(d);
+        cart = new cart_adapter( getContext(), userItems, currentUser, this);
+        item.setAdapter(cart);
+
+
+        toShow.setVisibility(View.GONE);
+        item.setVisibility(View.GONE);
+        recount();
     }
 }
