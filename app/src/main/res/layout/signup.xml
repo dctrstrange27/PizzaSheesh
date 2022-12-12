@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".signup.signup">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:text="PizzaSheesh"
+            android:textColor="@color/second_primary"
+            android:textSize="30dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/fredoka_one"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textAlignment="center"
+            android:textColor="@color/second_primary"
+            android:text="Register now so you can easily buy the pizza you crave for."
+
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="301dp"
+            android:layout_height="193dp"
+            android:layout_marginVertical="30dp"
+                android:background="@drawable/signup_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.229" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/sign_box"
+            android:drawableLeft="@drawable/person_signup"
+            android:drawablePadding="10dp"
+            android:hint="username"
+            android:padding="10dp"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:textInputLayoutFocusedRectEnabled="false" />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="156dp"
+            android:background="@drawable/sign_box"
+            android:drawableLeft="@drawable/address_icon"
+            android:drawablePadding="10dp"
+            android:hint="address"
+            android:padding="10dp"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:textInputLayoutFocusedRectEnabled="false" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/sign_box"
+            android:drawableLeft="@drawable/email"
+            android:drawablePadding="10dp"
+            android:hint="email"
+            android:padding="10dp"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:textInputLayoutFocusedRectEnabled="false" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="212dp"
+            android:background="@drawable/sign_box"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="10dp"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:textInputLayoutFocusedRectEnabled="false" />
+
+        <EditText
+            android:id="@+id/confirm_pass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="272dp"
+            android:background="@drawable/sign_box"
+            android:drawableLeft="@drawable/con_pass"
+            android:drawablePadding="10dp"
+            android:hint="confirm password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:textInputLayoutFocusedRectEnabled="false" />
+
+        <Button
+            android:id="@+id/signup"
+            style="@style/primary_button"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="52dp"
+            android:text="signup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:text="© 2022 Philip Rice Dealership. All rights reserved."
+            android:textAlignment="center"
+            android:textColor="@color/second_primary"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

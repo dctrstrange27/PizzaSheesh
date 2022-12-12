@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingHorizontal="20dp"
+    >
+    <ImageView
+        android:id="@+id/item_pic"
+        android:layout_weight=".30"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:src="@drawable/prod_bukopandan5"
+        />
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_weight=".40"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/item_name"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Name"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/item_price"
+            android:fontFamily="@font/poppins_medium"
+            android:text="$40.00"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/item_desc"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Mabango"
+            android:textColor="#403F3F"
+            android:textSize="11sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <ImageButton
+            android:clickable="true"
+            android:background="@color/trans"
+            android:id="@+id/delete"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="20dp"
+            android:src="@drawable/delete"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:clickable="true"
+                android:id="@+id/increase"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:src="@drawable/arrow_up"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/quantity"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:background="@drawable/quantity_box"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="#F6F8F8"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:clickable="true"
+                android:id="@+id/decrease"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:src="@drawable/arrow_down"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+
+</LinearLayout>
