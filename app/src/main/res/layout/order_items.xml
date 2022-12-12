@@ -11,7 +11,7 @@
         android:layout_weight=".30"
         android:layout_width="0dp"
         android:layout_height="110dp"
-        android:src="@drawable/prod_bukopandan5"
+        android:src="@drawable/pizza_sheezy_lasagna"
         />
     <LinearLayout
         android:padding="5dp"
