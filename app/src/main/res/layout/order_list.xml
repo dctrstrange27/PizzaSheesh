@@ -53,7 +53,7 @@
             android:text="cancel"
             android:textColor="#fff"
             android:textSize="11sp"
-            style="@style/checkout_button"
+            style="@style/cancel_button"
             />
     </LinearLayout>
     <LinearLayout

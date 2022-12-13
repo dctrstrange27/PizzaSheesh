@@ -30,7 +30,7 @@
             android:textAllCaps="false"
             android:textAlignment="center"
             android:text="label here"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_bold"
             android:textColor="#000"
             android:textSize="15sp"
             android:layout_width="0dp"

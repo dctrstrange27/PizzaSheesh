@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="20dp"
     android:layout_width="350dp"
     android:layout_height="wrap_content"
     android:background="@drawable/dialog_box">
@@ -18,6 +19,7 @@
         />
 
     <ImageButton
+        android:background="@color/trans"
         android:id="@+id/closeV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,19 +64,29 @@
         <Button
             android:id="@+id/no"
             style="@style/primary_button"
-            android:layout_width="147dp"
+            android:textColor="@color/second_primary"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
+            android:background="@drawable/order_now"
+            android:backgroundTint="@color/trans"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
+            android:fontFamily="@font/poppins_bold"
             android:text="no" />
-
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"/>
         <Button
             android:id="@+id/ok"
             style="@style/primary_button"
-            android:layout_width="149dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/second_primary"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            android:background="@drawable/order_now"
+            android:backgroundTint="@color/trans"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:text="yes" />
     </LinearLayout>
 

@@ -11,8 +11,8 @@
         android:id="@+id/pic"
         android:layout_weight=".30"
         android:layout_width="0dp"
-        android:layout_height="110dp"
-        android:src="@drawable/prod_bukopandan5"
+        android:layout_height="150dp"
+        android:src="@drawable/pizza_sheezy_lasagna"
         />
     <LinearLayout
         android:padding="5dp"
@@ -40,12 +40,12 @@
 
         <TextView
             android:id="@+id/prodDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:fontFamily="@font/poppins_medium"
             android:text="Mabango"
             android:textColor="#403F3F"
-            android:textSize="11sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textSize="11sp" />
 
     </LinearLayout>
     <LinearLayout

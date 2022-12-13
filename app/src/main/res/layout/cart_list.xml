@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:background="@drawable/prod_box"
     android:paddingHorizontal="20dp"
     >
     <ImageView
@@ -10,8 +11,8 @@
         android:layout_weight=".30"
         android:layout_width="0dp"
         android:layout_height="110dp"
-        android:src="@drawable/prod_bukopandan5"
-        />
+        android:src="@drawable/pizza_sheezy_lasagna"
+       />
     <LinearLayout
         android:padding="5dp"
         android:layout_weight=".40"

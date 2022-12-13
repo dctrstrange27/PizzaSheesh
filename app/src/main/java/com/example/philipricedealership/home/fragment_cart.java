@@ -96,7 +96,7 @@ public class fragment_cart extends Fragment {
         }
         else {
             checkout.setClickable(true);
-            checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.black));
+            checkout.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.primary_color));
         }
 
         if(totalQty == 0){

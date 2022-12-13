@@ -43,9 +43,6 @@ public class fragment_orders extends Fragment {
         order = v.findViewById(R.id.orderList);
 
 
-
-
-
         rerender();
       return  v;
     }

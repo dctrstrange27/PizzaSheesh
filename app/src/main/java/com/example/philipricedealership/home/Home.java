@@ -53,7 +53,7 @@ public class Home extends AppCompatActivity {
         });
         products.setOnClickListener(johny -> {
             products.startAnimation(AnimationUtils.loadAnimation(Home.this, R.anim.anim_item));
-            fragLabel.setText("Products");
+            fragLabel.setText("Pizza");
             route(1, null);
         });
         orders.setOnClickListener(johny -> {

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="350dp"
+    android:paddingBottom="20dp"
     android:layout_height="wrap_content"
     android:background="@drawable/dialog_box">
 
@@ -14,10 +15,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/closeV"
-        android:src="@drawable/checkout"
+        android:src="@drawable/pizza"
         />
 
     <ImageButton
+        android:background="@color/trans"
         android:id="@+id/closeV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,7 +51,7 @@
     <Button
         style="@style/primary_button"
         android:id="@+id/no"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginStart="16dp"

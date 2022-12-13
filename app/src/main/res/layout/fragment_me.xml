@@ -70,6 +70,7 @@
                     android:id="@+id/staticusername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/prod_box"
                     android:drawableLeft="@drawable/person"
                     android:fontFamily="@font/pacifico"
                     android:gravity="center"
@@ -97,6 +98,7 @@
                 >
 
                 <TextView
+                    android:background="@drawable/prod_box"
                     android:id="@+id/staticemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
